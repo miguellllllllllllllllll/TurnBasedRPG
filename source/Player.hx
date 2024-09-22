@@ -22,8 +22,8 @@ class Player extends FlxSprite
         // Hitbox
         //Set.size formula: x/2, y/2
         //offset.set formula: x/4, y/2
-        setSize(16, 23);
-        offset.set(8, 23);
+		setSize(16, 23);
+		offset.set(8, 23);
 
         // adds animation, ("name", [frame-int], frame rate)
         animation.add("d_idle", [0]);
@@ -36,6 +36,8 @@ class Player extends FlxSprite
         // Graphic
         //makeGraphic(16, 16, FlxColor.BLUE);
         drag.x = drag.y = 800;  // Higher drag for faster slowdown
+		// setSize(8, 8);
+		// offset.set(4, 4);
     }
 
     function updateMovement()

@@ -9,6 +9,6 @@ class Main extends Sprite
 	{
 		super();
 		// whichever state u put on here will start first
-		addChild(new FlxGame(0, 0, MenuState));
+		addChild(new FlxGame(320, 240, MenuState));
 	}
 }
