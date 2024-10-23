@@ -2,11 +2,13 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
+import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
 
 class Player extends FlxSprite
 {   
     static inline var SPEED:Float = 100;
+    var stepSound:FlxSound;
 
     public function new(x:Float = 0, y:Float = 0)
     {
@@ -38,14 +40,25 @@ class Player extends FlxSprite
         drag.x = drag.y = 800;  // Higher drag for faster slowdown
 		// setSize(8, 8);
 		// offset.set(4, 4);
+        stepSound = FlxG.sound.load(AssetPaths.step__wav);
     }
 
     function updateMovement()
     {
+        #if FLX_KEYBOARD
         var up:Bool = FlxG.keys.anyPressed([UP, W]);
         var down:Bool = FlxG.keys.anyPressed([DOWN, S]);
         var left:Bool = FlxG.keys.anyPressed([LEFT, A]);
         var right:Bool = FlxG.keys.anyPressed([RIGHT, D]);
+        #end
+
+        #if mobile
+        var virtualPad = PlayState.virtualPad;
+        up = up || virtualPad.buttonUp.pressed;
+        down = down || virtualPad.buttonDown.pressed;
+        left  = left || virtualPad.buttonLeft.pressed;
+        right = right || virtualPad.buttonRight.pressed;
+        #end
 
         // Set velocity to zero if no keys are pressed
         velocity.set(0, 0);
@@ -53,7 +66,7 @@ class Player extends FlxSprite
         var moving:Bool = false;
 
         if (up || down || left || right)
-            {
+            {   stepSound.play();
                 var newAngle:Float = 0;
                 if (up)
                 {

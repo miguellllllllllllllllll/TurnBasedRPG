@@ -35,11 +35,11 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "2";
+		app.meta["build"] = "7";
 		app.meta["company"] = "HaxeFlixel";
 		app.meta["file"] = "TurnBasedRPG";
 		app.meta["name"] = "TurnBasedRPG";
-		app.meta["packageName"] = "com.example.myapp";
+		app.meta["packageName"] = "com.haxeflixel.turnBasedRPG";
 		app.meta["version"] = "0.0.1";
 
 		
