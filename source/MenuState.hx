@@ -19,10 +19,10 @@ class MenuState extends FlxState
 		//add(text);
 		//var text = new FlxText(10, 20, 100, "I miss my twink boyfriend...");
 		//add(text);
-		if (FlxG.sound.music == null) // don't restart the music if it's already playing
+	/*	if (FlxG.sound.music == null) // don't restart the music if it's already playing
 			{
 				FlxG.sound.playMusic(AssetPaths.bardockthegoat__mp3, 1, true);
-			}
+			}*/
         var playButton = new FlxButton(0, 0, "Play", clickPlay);
         add(playButton);
 
