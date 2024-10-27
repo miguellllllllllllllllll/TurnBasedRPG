@@ -85,21 +85,21 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 		add(waveSprite);
 
 		// first, create our background. Make a black square, then draw borders onto it in white. Add it to our group.
-		background = new FlxSprite().makeGraphic(140, 140, FlxColor.WHITE);
-		background.drawRect(1, 1, 138, 44, FlxColor.BLACK);
-		background.drawRect(1, 46, 138, 93, FlxColor.BLACK);
+		background = new FlxSprite().makeGraphic(180, 160, FlxColor.WHITE);
+		background.drawRect(1, 1, 178, 58, FlxColor.BLACK);
+		background.drawRect(1, 60, 178, 99, FlxColor.BLACK);
 		background.screenCenter();
 		add(background);
 
 		// next, make a 'dummy' playerSprite that looks like our playerSprite (but can't move) and add it.
-		playerSprite = new Player(background.x + 36, background.y + 16);
+		playerSprite = new Player(background.x + 56, background.y + 16);
 		playerSprite.animation.frameIndex = 3;
 		playerSprite.active = false;
 		playerSprite.facing = RIGHT;
 		add(playerSprite);
 
 		// do the same thing for an enemySprite. We'll just use enemySprite type REGULAR for now and change it later.
-		enemySprite = new Enemy(background.x + 76, background.y + 16, REGULAR);
+		enemySprite = new Enemy(background.x + 96, background.y + 16, REGULAR);
 		enemySprite.animation.frameIndex = 3;
 		enemySprite.active = false;
 		enemySprite.facing = LEFT;
@@ -118,8 +118,8 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 
 		// create our choices and add them to the group.
 		choices = new Map();
-		choices[FIGHT] = new FlxText(background.x + 30, background.y + 48, 85, "FIGHT", 22);
-		choices[FLEE] = new FlxText(background.x + 30, choices[FIGHT].y + choices[FIGHT].height + 8, 85, "FLEE", 22);
+		choices[FIGHT] = new FlxText(background.x + 45, background.y + 75, 85, "FIGHT", 22);
+		choices[FLEE] = new FlxText(background.x + 45, choices[FIGHT].y + choices[FIGHT].height + 8, 85, "FLEE", 22);
 		add(choices[FIGHT]);
 		add(choices[FLEE]);
 

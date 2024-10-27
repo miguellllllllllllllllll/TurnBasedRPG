@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.sound.FlxSound;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxAxes;
@@ -16,9 +17,11 @@ class GameOverState extends FlxState
 	var scoreText:FlxText; // text of the score
 	var highscoreText:FlxText; // text to show the highscore
 	var mainMenuButton:FlxButton; // button to go to main menu
+	var gameoversound:FlxSound;
 
 	/**
 	 * Called from PlayState, this will set our win and score variables
+
 	 * @param	win		true if the player beat the boss, false if they died
 	 * @param	score	the number of coins collected
 	 */
@@ -36,6 +39,10 @@ class GameOverState extends FlxState
 		titleText.alignment = CENTER;
 		titleText.screenCenter(FlxAxes.X);
 		add(titleText);
+
+		/*gameoversound =  FlxG.sound.load(AssetPaths.gameoversound__mp3);
+		gameoversound.playMusic();
+		add(gameoversound);*/
 
 		messageText = new FlxText(0, (FlxG.height / 2) - 25, 0, "Final Score:", 8);
 		messageText.alignment = CENTER;
