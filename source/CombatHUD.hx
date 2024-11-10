@@ -44,7 +44,7 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 
 	// These are the sprites that we will use to show the combat hud interface
 	var background:FlxSprite; // this is the background sprite
-	var playerSprite:Player; // this is a sprite of the playerSprite
+	var playerSprite:CombatPlayer; // this is a sprite of the playerSprite
 	var enemySprite:Enemy; // this is a sprite of the enemySprite
 
 	// These variables will be used to track the enemySprite's health
@@ -53,6 +53,8 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 	var enemyHealthBar:FlxBar; // This FlxBar will show us the enemySprite's current/max health
 
 	var playerHealthCounter:FlxText; // this will show the playerSprite's current/max health
+
+	var spritesheet:FlxSprite;
 
 	var damages:Array<FlxText>; // This array will contain 2 FlxText objects which will appear to show damage dealt (or misses)
 
@@ -92,11 +94,14 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 		add(background);
 
 		// next, make a 'dummy' playerSprite that looks like our playerSprite (but can't move) and add it.
-		playerSprite = new Player(background.x + 56, background.y + 36);
-		playerSprite.animation.frameIndex = 3;
-		playerSprite.active = false;
-		playerSprite.facing = RIGHT;
+		playerSprite = new CombatPlayer(background.x + 56, background.y + 36);
+		/*playerSprite.animation.frameIndex = 3;*/
+		playerSprite.alive = true;
+		playerSprite.exists = true;
+		playerSprite.active = true;
+		playerSprite.facing = LEFT;
 		add(playerSprite);
+		playerSprite.animation.play("combat_idle");
 
 		// do the same thing for an enemySprite. We'll just use enemySprite type REGULAR for now and change it later.
 		enemySprite = new Enemy(background.x + 96, background.y + 36, REGULAR);
@@ -286,7 +291,8 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 
 		// based on which flags are set, do the specified action
 		if (fire)
-		{
+		{	
+			/*playerSprite.animation.update("combat_idle", true);*/
 			selectSound.play();
 			makeChoice(); // when the playerSprite chooses either option, we call this function to process their selection
 		}
