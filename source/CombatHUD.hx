@@ -14,6 +14,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 
 using flixel.util.FlxSpriteUtil;
 
@@ -74,9 +75,14 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 	var selectSound:FlxSound;
 	var winSound:FlxSound;
 	var combatSound:FlxSound;
+	var combatMusic:FlxSound;
 
 	var screen:FlxSprite;
-
+/**
+	 * This function will be called from PlayState when we want to start combat. It will setup the screen and make sure everything is ready.
+	 * @param	playerHealth	The amount of health the playerSprite is starting with
+	 * @param	enemy			This links back to the Enemy we are fighting with so we can get it's health and type (to change our sprite).
+	 */
 	public function new()
 	{
 		super();
@@ -96,7 +102,7 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 		// next, make a 'dummy' playerSprite that looks like our playerSprite (but can't move) and add it.
 		playerSprite = new CombatPlayer(background.x + 56, background.y + 36);
 		/*playerSprite.animation.frameIndex = 3;*/
-		playerSprite.alive = true;
+		playerSprite.alive = false;
 		playerSprite.exists = true;
 		playerSprite.active = true;
 		playerSprite.facing = LEFT;
@@ -104,11 +110,16 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 		playerSprite.animation.play("combat_idle");
 
 		// do the same thing for an enemySprite. We'll just use enemySprite type REGULAR for now and change it later.
-		enemySprite = new Enemy(background.x + 96, background.y + 36, REGULAR);
-		enemySprite.animation.frameIndex = 3;
+		enemySprite = new Enemy(background.x + 96, background.y + 36, BOSS);
+		/*enemySprite.loadGraphic(AssetPaths.frieza__png, true,35, 44);*/
+		/*enemySprite.animation.frameIndex = 7;*/
 		enemySprite.active = false;
-		enemySprite.facing = LEFT;
+		enemySprite.alive = true;
+		enemySprite.exists = true;
+		enemySprite.facing = RIGHT;
 		add(enemySprite);
+		enemySprite.animation.play("combat_idle");
+
 
 		// setup the playerSprite's health display and add it to the group.
 		playerHealthCounter = new FlxText(0, playerSprite.y + playerSprite.height + 2, 0, "3 / 3", 8);
@@ -171,13 +182,10 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 		selectSound = FlxG.sound.load(AssetPaths.select__wav);
 		winSound = FlxG.sound.load(AssetPaths.win__wav);
 		combatSound = FlxG.sound.load(AssetPaths.combat__wav);
+		combatMusic = FlxG.sound.load(AssetPaths.battlemusic__wav);
+		combatMusic.looped = true;
 	}
 
-	/**
-	 * This function will be called from PlayState when we want to start combat. It will setup the screen and make sure everything is ready.
-	 * @param	playerHealth	The amount of health the playerSprite is starting with
-	 * @param	enemy			This links back to the Enemy we are fighting with so we can get it's health and type (to change our sprite).
-	 */
 	public function initCombat(playerHealth:Int, enemy:Enemy)
 	{
 		screen.drawFrame();
@@ -236,7 +244,8 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 		active = true;
 		wait = false;
 		pointer.visible = true;
-		selectSound.play();
+		selectSound.play(true, 0.0);
+		combatMusic.play();
 	}
 
 	/**
@@ -265,6 +274,13 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 			updateTouchInput();
 		}
 		super.update(elapsed);
+
+		if (playerSprite.animation.finished) {
+			playerSprite.animation.play("combat_idle");
+		}
+		if (enemySprite.animation.finished) {
+			enemySprite.animation.play("combat_idle");
+		}
 	}
 
 	function updateKeyboardInput()
@@ -400,6 +416,7 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 					fledSound.play();
 					results.visible = true;
 					results.alpha = 0;
+					combatMusic.stop();
 					FlxTween.tween(results, {alpha: 1}, .66, {ease: FlxEase.circInOut, onComplete: doneResultsIn});
 				}
 				else
@@ -429,12 +446,15 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 			hurtSound.play();
 			damages[0].text = "1";
 			playerHealth--;
+			playerSprite.animation.play("hurt");
+			
 			updatePlayerHealth();
 		}
 		else
 		{
 			// if the enemySprite misses, show it on the screen
 			damages[0].text = "MISS!";
+			playerSprite.animation.play("dodge");
 			missSound.play();
 		}
 
@@ -506,6 +526,7 @@ class CombatHUD extends FlxTypedGroup<FlxSprite>
 			results.text = "VICTORY!";
 			results.visible = true;
 			results.alpha = 0;
+			combatMusic.stop();
 			FlxTween.tween(results, {alpha: 1}, 0.66, {ease: FlxEase.circInOut, onComplete: doneResultsIn});
 		}
 		else

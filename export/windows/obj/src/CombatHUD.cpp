@@ -7,6 +7,9 @@
 #ifndef INCLUDED_CombatHUD
 #include <CombatHUD.h>
 #endif
+#ifndef INCLUDED_CombatPlayer
+#include <CombatPlayer.h>
+#endif
 #ifndef INCLUDED_Enemy
 #include <Enemy.h>
 #endif
@@ -15,9 +18,6 @@
 #endif
 #ifndef INCLUDED_Outcome
 #include <Outcome.h>
-#endif
-#ifndef INCLUDED_Player
-#include <Player.h>
 #endif
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
@@ -164,16 +164,16 @@
 #include <openfl/geom/Rectangle.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_94bd977f46f9a023_153_new,"CombatHUD","new",0x0b459335,"CombatHUD.new","CombatHUD.hx",153,0x215789db)
-HX_DEFINE_STACK_FRAME(_hx_pos_94bd977f46f9a023_38_new,"CombatHUD","new",0x0b459335,"CombatHUD.new","CombatHUD.hx",38,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_177_initCombat,"CombatHUD","initCombat",0x420edd2f,"CombatHUD.initCombat","CombatHUD.hx",177,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_223_updateAlpha,"CombatHUD","updateAlpha",0x5f8f306a,"CombatHUD.updateAlpha","CombatHUD.hx",223,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_221_updateAlpha,"CombatHUD","updateAlpha",0x5f8f306a,"CombatHUD.updateAlpha","CombatHUD.hx",221,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_230_finishFadeIn,"CombatHUD","finishFadeIn",0xdde03bbf,"CombatHUD.finishFadeIn","CombatHUD.hx",230,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_241_finishFadeOut,"CombatHUD","finishFadeOut",0x46589f74,"CombatHUD.finishFadeOut","CombatHUD.hx",241,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_250_updatePlayerHealth,"CombatHUD","updatePlayerHealth",0x976fb751,"CombatHUD.updatePlayerHealth","CombatHUD.hx",250,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_256_update,"CombatHUD","update",0xf0e37654,"CombatHUD.update","CombatHUD.hx",256,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_266_updateKeyboardInput,"CombatHUD","updateKeyboardInput",0x9c6baeef,"CombatHUD.updateKeyboardInput","CombatHUD.hx",266,0x215789db)
+HX_DEFINE_STACK_FRAME(_hx_pos_94bd977f46f9a023_160_new,"CombatHUD","new",0x0b459335,"CombatHUD.new","CombatHUD.hx",160,0x215789db)
+HX_DEFINE_STACK_FRAME(_hx_pos_94bd977f46f9a023_39_new,"CombatHUD","new",0x0b459335,"CombatHUD.new","CombatHUD.hx",39,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_186_initCombat,"CombatHUD","initCombat",0x420edd2f,"CombatHUD.initCombat","CombatHUD.hx",186,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_232_updateAlpha,"CombatHUD","updateAlpha",0x5f8f306a,"CombatHUD.updateAlpha","CombatHUD.hx",232,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_230_updateAlpha,"CombatHUD","updateAlpha",0x5f8f306a,"CombatHUD.updateAlpha","CombatHUD.hx",230,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_239_finishFadeIn,"CombatHUD","finishFadeIn",0xdde03bbf,"CombatHUD.finishFadeIn","CombatHUD.hx",239,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_251_finishFadeOut,"CombatHUD","finishFadeOut",0x46589f74,"CombatHUD.finishFadeOut","CombatHUD.hx",251,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_260_updatePlayerHealth,"CombatHUD","updatePlayerHealth",0x976fb751,"CombatHUD.updatePlayerHealth","CombatHUD.hx",260,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_266_update,"CombatHUD","update",0xf0e37654,"CombatHUD.update","CombatHUD.hx",266,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_280_updateKeyboardInput,"CombatHUD","updateKeyboardInput",0x9c6baeef,"CombatHUD.updateKeyboardInput","CombatHUD.hx",280,0x215789db)
 static const int _hx_array_data_0c6cd4c3_11[] = {
 	(int)32,(int)88,(int)13,
 };
@@ -183,154 +183,158 @@ static const int _hx_array_data_0c6cd4c3_12[] = {
 static const int _hx_array_data_0c6cd4c3_13[] = {
 	(int)83,(int)40,
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_304_updateTouchInput,"CombatHUD","updateTouchInput",0x876dd33f,"CombatHUD.updateTouchInput","CombatHUD.hx",304,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_329_movePointer,"CombatHUD","movePointer",0x81fe1981,"CombatHUD.movePointer","CombatHUD.hx",329,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_336_makeChoice,"CombatHUD","makeChoice",0x892305ba,"CombatHUD.makeChoice","CombatHUD.hx",336,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_319_updateTouchInput,"CombatHUD","updateTouchInput",0x876dd33f,"CombatHUD.updateTouchInput","CombatHUD.hx",319,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_344_movePointer,"CombatHUD","movePointer",0x81fe1981,"CombatHUD.movePointer","CombatHUD.hx",344,0x215789db)
 HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_351_makeChoice,"CombatHUD","makeChoice",0x892305ba,"CombatHUD.makeChoice","CombatHUD.hx",351,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_357_makeChoice,"CombatHUD","makeChoice",0x892305ba,"CombatHUD.makeChoice","CombatHUD.hx",357,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_416_enemyAttack,"CombatHUD","enemyAttack",0x20228805,"CombatHUD.enemyAttack","CombatHUD.hx",416,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_447_updateDamageY,"CombatHUD","updateDamageY",0x1e0fb516,"CombatHUD.updateDamageY","CombatHUD.hx",447,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_455_updateDamageAlpha,"CombatHUD","updateDamageAlpha",0x79796e7b,"CombatHUD.updateDamageAlpha","CombatHUD.hx",455,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_463_doneDamageIn,"CombatHUD","doneDamageIn",0x0a5fc361,"CombatHUD.doneDamageIn","CombatHUD.hx",463,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_471_doneResultsIn,"CombatHUD","doneResultsIn",0x5b1790ae,"CombatHUD.doneResultsIn","CombatHUD.hx",471,0x215789db)
-HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_479_doneDamageOut,"CombatHUD","doneDamageOut",0x096fc592,"CombatHUD.doneDamageOut","CombatHUD.hx",479,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_366_makeChoice,"CombatHUD","makeChoice",0x892305ba,"CombatHUD.makeChoice","CombatHUD.hx",366,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_372_makeChoice,"CombatHUD","makeChoice",0x892305ba,"CombatHUD.makeChoice","CombatHUD.hx",372,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_432_enemyAttack,"CombatHUD","enemyAttack",0x20228805,"CombatHUD.enemyAttack","CombatHUD.hx",432,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_466_updateDamageY,"CombatHUD","updateDamageY",0x1e0fb516,"CombatHUD.updateDamageY","CombatHUD.hx",466,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_474_updateDamageAlpha,"CombatHUD","updateDamageAlpha",0x79796e7b,"CombatHUD.updateDamageAlpha","CombatHUD.hx",474,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_482_doneDamageIn,"CombatHUD","doneDamageIn",0x0a5fc361,"CombatHUD.doneDamageIn","CombatHUD.hx",482,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_490_doneResultsIn,"CombatHUD","doneResultsIn",0x5b1790ae,"CombatHUD.doneResultsIn","CombatHUD.hx",490,0x215789db)
+HX_LOCAL_STACK_FRAME(_hx_pos_94bd977f46f9a023_498_doneDamageOut,"CombatHUD","doneDamageOut",0x096fc592,"CombatHUD.doneDamageOut","CombatHUD.hx",498,0x215789db)
 
 void CombatHUD_obj::__construct(){
             		HX_BEGIN_LOCAL_FUNC_S0(::hx::LocalFunc,_hx_Closure_0) HXARGC(1)
             		void _hx_run( ::flixel::FlxSprite sprite){
-            			HX_GC_STACKFRAME(&_hx_pos_94bd977f46f9a023_153_new)
-HXLINE( 154)			{
-HXLINE( 154)				 ::flixel::math::FlxBasePoint this1 = sprite->scrollFactor;
-HXDLIN( 154)				this1->set_x(( (Float)(0) ));
-HXDLIN( 154)				this1->set_y(( (Float)(0) ));
+            			HX_GC_STACKFRAME(&_hx_pos_94bd977f46f9a023_160_new)
+HXLINE( 161)			{
+HXLINE( 161)				 ::flixel::math::FlxBasePoint this1 = sprite->scrollFactor;
+HXDLIN( 161)				this1->set_x(( (Float)(0) ));
+HXDLIN( 161)				this1->set_y(( (Float)(0) ));
             			}
-HXLINE( 155)			sprite->set_alpha(( (Float)(0) ));
+HXLINE( 162)			sprite->set_alpha(( (Float)(0) ));
             		}
             		HX_END_LOCAL_FUNC1((void))
 
-            	HX_GC_STACKFRAME(&_hx_pos_94bd977f46f9a023_38_new)
-HXLINE(  66)		this->wait = true;
-HXLINE(  65)		this->alpha = ((Float)0);
-HXLINE(  80)		super::__construct(null());
-HXLINE(  82)		this->screen =  ::flixel::FlxSprite_obj::__alloc( HX_CTX ,null(),null(),null())->makeGraphic(::flixel::FlxG_obj::width,::flixel::FlxG_obj::height,0,null(),null());
-HXLINE(  83)		 ::flixel::addons::effects::chainable::FlxWaveEffect waveEffect =  ::flixel::addons::effects::chainable::FlxWaveEffect_obj::__alloc( HX_CTX ,::flixel::addons::effects::chainable::FlxWaveMode_obj::ALL_dyn(),4,-1,4,null(),null(),null());
-HXLINE(  84)		 ::flixel::addons::effects::chainable::FlxEffectSprite waveSprite =  ::flixel::addons::effects::chainable::FlxEffectSprite_obj::__alloc( HX_CTX ,this->screen,::Array_obj< ::Dynamic>::__new(1)->init(0,waveEffect));
-HXLINE(  85)		this->add(waveSprite);
-HXLINE(  88)		this->background =  ::flixel::FlxSprite_obj::__alloc( HX_CTX ,null(),null(),null())->makeGraphic(140,140,-1,null(),null());
-HXLINE(  89)		::flixel::util::FlxSpriteUtil_obj::drawRect(this->background,( (Float)(1) ),( (Float)(1) ),( (Float)(138) ),( (Float)(44) ),-16777216,null(),null());
-HXLINE(  90)		::flixel::util::FlxSpriteUtil_obj::drawRect(this->background,( (Float)(1) ),( (Float)(46) ),( (Float)(138) ),( (Float)(93) ),-16777216,null(),null());
-HXLINE(  91)		{
-HXLINE(  91)			 ::flixel::FlxSprite _this = this->background;
-HXDLIN(  91)			int axes = 17;
-HXDLIN(  91)			bool _hx_tmp;
-HXDLIN(  91)			if ((axes != 1)) {
-HXLINE(  91)				_hx_tmp = (axes == 17);
+            	HX_GC_STACKFRAME(&_hx_pos_94bd977f46f9a023_39_new)
+HXLINE(  69)		this->wait = true;
+HXLINE(  68)		this->alpha = ((Float)0);
+HXLINE(  84)		super::__construct(null());
+HXLINE(  86)		this->screen =  ::flixel::FlxSprite_obj::__alloc( HX_CTX ,null(),null(),null())->makeGraphic(::flixel::FlxG_obj::width,::flixel::FlxG_obj::height,0,null(),null());
+HXLINE(  87)		 ::flixel::addons::effects::chainable::FlxWaveEffect waveEffect =  ::flixel::addons::effects::chainable::FlxWaveEffect_obj::__alloc( HX_CTX ,::flixel::addons::effects::chainable::FlxWaveMode_obj::ALL_dyn(),4,-1,4,null(),null(),null());
+HXLINE(  88)		 ::flixel::addons::effects::chainable::FlxEffectSprite waveSprite =  ::flixel::addons::effects::chainable::FlxEffectSprite_obj::__alloc( HX_CTX ,this->screen,::Array_obj< ::Dynamic>::__new(1)->init(0,waveEffect));
+HXLINE(  89)		this->add(waveSprite);
+HXLINE(  92)		this->background =  ::flixel::FlxSprite_obj::__alloc( HX_CTX ,null(),null(),null())->makeGraphic(180,180,-1,null(),null());
+HXLINE(  93)		::flixel::util::FlxSpriteUtil_obj::drawRect(this->background,( (Float)(1) ),( (Float)(1) ),( (Float)(178) ),( (Float)(78) ),-16777216,null(),null());
+HXLINE(  94)		::flixel::util::FlxSpriteUtil_obj::drawRect(this->background,( (Float)(1) ),( (Float)(80) ),( (Float)(178) ),( (Float)(99) ),-16777216,null(),null());
+HXLINE(  95)		{
+HXLINE(  95)			 ::flixel::FlxSprite _this = this->background;
+HXDLIN(  95)			int axes = 17;
+HXDLIN(  95)			bool _hx_tmp;
+HXDLIN(  95)			if ((axes != 1)) {
+HXLINE(  95)				_hx_tmp = (axes == 17);
             			}
             			else {
-HXLINE(  91)				_hx_tmp = true;
+HXLINE(  95)				_hx_tmp = true;
             			}
-HXDLIN(  91)			if (_hx_tmp) {
-HXLINE(  91)				int _hx_tmp1 = ::flixel::FlxG_obj::width;
-HXDLIN(  91)				_this->set_x(((( (Float)(_hx_tmp1) ) - _this->get_width()) / ( (Float)(2) )));
+HXDLIN(  95)			if (_hx_tmp) {
+HXLINE(  95)				int _hx_tmp1 = ::flixel::FlxG_obj::width;
+HXDLIN(  95)				_this->set_x(((( (Float)(_hx_tmp1) ) - _this->get_width()) / ( (Float)(2) )));
             			}
-HXDLIN(  91)			bool _hx_tmp2;
-HXDLIN(  91)			if ((axes != 16)) {
-HXLINE(  91)				_hx_tmp2 = (axes == 17);
+HXDLIN(  95)			bool _hx_tmp2;
+HXDLIN(  95)			if ((axes != 16)) {
+HXLINE(  95)				_hx_tmp2 = (axes == 17);
             			}
             			else {
-HXLINE(  91)				_hx_tmp2 = true;
+HXLINE(  95)				_hx_tmp2 = true;
             			}
-HXDLIN(  91)			if (_hx_tmp2) {
-HXLINE(  91)				int _hx_tmp3 = ::flixel::FlxG_obj::height;
-HXDLIN(  91)				_this->set_y(((( (Float)(_hx_tmp3) ) - _this->get_height()) / ( (Float)(2) )));
+HXDLIN(  95)			if (_hx_tmp2) {
+HXLINE(  95)				int _hx_tmp3 = ::flixel::FlxG_obj::height;
+HXDLIN(  95)				_this->set_y(((( (Float)(_hx_tmp3) ) - _this->get_height()) / ( (Float)(2) )));
             			}
             		}
-HXLINE(  92)		this->add(this->background);
-HXLINE(  95)		this->playerSprite =  ::Player_obj::__alloc( HX_CTX ,(this->background->x + 36),(this->background->y + 16));
-HXLINE(  96)		this->playerSprite->animation->set_frameIndex(3);
-HXLINE(  97)		this->playerSprite->set_active(false);
-HXLINE(  98)		this->playerSprite->set_facing(16);
-HXLINE(  99)		this->add(this->playerSprite);
-HXLINE( 102)		this->enemySprite =  ::Enemy_obj::__alloc( HX_CTX ,(this->background->x + 76),(this->background->y + 16),::EnemyType_obj::REGULAR_dyn());
-HXLINE( 103)		this->enemySprite->animation->set_frameIndex(3);
-HXLINE( 104)		this->enemySprite->set_active(false);
-HXLINE( 105)		this->enemySprite->set_facing(1);
-HXLINE( 106)		this->add(this->enemySprite);
-HXLINE( 109)		Float _hx_tmp4 = this->playerSprite->y;
-HXDLIN( 109)		this->playerHealthCounter =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,0,((_hx_tmp4 + this->playerSprite->get_height()) + 2),0,HX_("3 / 3",95,2f,ba,72),8,null());
-HXLINE( 110)		this->playerHealthCounter->set_alignment(HX_("center",d5,25,db,05));
-HXLINE( 111)		 ::flixel::text::FlxText _hx_tmp5 = this->playerHealthCounter;
-HXDLIN( 111)		Float _hx_tmp6 = (this->playerSprite->x + 4);
-HXDLIN( 111)		_hx_tmp5->set_x((_hx_tmp6 - (this->playerHealthCounter->get_width() / ( (Float)(2) ))));
-HXLINE( 112)		this->add(this->playerHealthCounter);
-HXLINE( 115)		this->enemyHealthBar =  ::flixel::ui::FlxBar_obj::__alloc( HX_CTX ,(this->enemySprite->x - ( (Float)(6) )),this->playerHealthCounter->y,::flixel::ui::FlxBarFillDirection_obj::LEFT_TO_RIGHT_dyn(),20,10,null(),null(),null(),null(),null());
-HXLINE( 116)		this->enemyHealthBar->createFilledBar(-2354116,-256,true,-256);
-HXLINE( 117)		this->add(this->enemyHealthBar);
-HXLINE( 120)		this->choices =  ::haxe::ds::EnumValueMap_obj::__alloc( HX_CTX );
-HXLINE( 121)		{
-HXLINE( 121)			::Dynamic this1 = this->choices;
-HXDLIN( 121)			 ::flixel::text::FlxText v =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,(this->background->x + 30),(this->background->y + 48),85,HX_("FIGHT",b0,4d,83,7e),22,null());
-HXDLIN( 121)			( ( ::haxe::ds::EnumValueMap)(this1) )->set(::Choice_obj::FIGHT_dyn(),v);
+HXLINE(  96)		this->add(this->background);
+HXLINE(  99)		this->playerSprite =  ::CombatPlayer_obj::__alloc( HX_CTX ,(this->background->x + 56),(this->background->y + 36));
+HXLINE( 101)		this->playerSprite->set_alive(true);
+HXLINE( 102)		this->playerSprite->set_exists(true);
+HXLINE( 103)		this->playerSprite->set_active(true);
+HXLINE( 104)		this->playerSprite->set_facing(1);
+HXLINE( 105)		this->add(this->playerSprite);
+HXLINE( 106)		this->playerSprite->animation->play(HX_("combat_idle",3f,76,33,08),null(),null(),null());
+HXLINE( 109)		this->enemySprite =  ::Enemy_obj::__alloc( HX_CTX ,(this->background->x + 96),(this->background->y + 36),::EnemyType_obj::REGULAR_dyn());
+HXLINE( 110)		this->enemySprite->animation->set_frameIndex(3);
+HXLINE( 111)		this->enemySprite->set_active(false);
+HXLINE( 112)		this->enemySprite->set_facing(1);
+HXLINE( 113)		this->add(this->enemySprite);
+HXLINE( 116)		Float _hx_tmp4 = this->playerSprite->y;
+HXDLIN( 116)		this->playerHealthCounter =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,0,((_hx_tmp4 + this->playerSprite->get_height()) + 2),0,HX_("3 / 3",95,2f,ba,72),8,null());
+HXLINE( 117)		this->playerHealthCounter->set_alignment(HX_("center",d5,25,db,05));
+HXLINE( 118)		 ::flixel::text::FlxText _hx_tmp5 = this->playerHealthCounter;
+HXDLIN( 118)		Float _hx_tmp6 = (this->playerSprite->x + 4);
+HXDLIN( 118)		_hx_tmp5->set_x((_hx_tmp6 - (this->playerHealthCounter->get_width() / ( (Float)(2) ))));
+HXLINE( 119)		this->add(this->playerHealthCounter);
+HXLINE( 122)		this->enemyHealthBar =  ::flixel::ui::FlxBar_obj::__alloc( HX_CTX ,(this->enemySprite->x - ( (Float)(6) )),this->playerHealthCounter->y,::flixel::ui::FlxBarFillDirection_obj::LEFT_TO_RIGHT_dyn(),20,10,null(),null(),null(),null(),null());
+HXLINE( 123)		this->enemyHealthBar->createFilledBar(-2354116,-256,true,-256);
+HXLINE( 124)		this->add(this->enemyHealthBar);
+HXLINE( 127)		this->choices =  ::haxe::ds::EnumValueMap_obj::__alloc( HX_CTX );
+HXLINE( 128)		{
+HXLINE( 128)			::Dynamic this1 = this->choices;
+HXDLIN( 128)			 ::flixel::text::FlxText v =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,(this->background->x + 45),(this->background->y + 95),85,HX_("FIGHT",b0,4d,83,7e),22,null());
+HXDLIN( 128)			( ( ::haxe::ds::EnumValueMap)(this1) )->set(::Choice_obj::FIGHT_dyn(),v);
             		}
-HXLINE( 122)		{
-HXLINE( 122)			::Dynamic this2 = this->choices;
-HXDLIN( 122)			Float v1 = (this->background->x + 30);
-HXDLIN( 122)			Float v2 = this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->y;
-HXDLIN( 122)			 ::flixel::text::FlxText v3 =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,v1,((v2 + this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->get_height()) + 8),85,HX_("FLEE",26,d7,7e,2e),22,null());
-HXDLIN( 122)			( ( ::haxe::ds::EnumValueMap)(this2) )->set(::Choice_obj::FLEE_dyn(),v3);
+HXLINE( 129)		{
+HXLINE( 129)			::Dynamic this2 = this->choices;
+HXDLIN( 129)			Float v1 = (this->background->x + 45);
+HXDLIN( 129)			Float v2 = this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->y;
+HXDLIN( 129)			 ::flixel::text::FlxText v3 =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,v1,((v2 + this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->get_height()) + 8),85,HX_("FLEE",26,d7,7e,2e),22,null());
+HXDLIN( 129)			( ( ::haxe::ds::EnumValueMap)(this2) )->set(::Choice_obj::FLEE_dyn(),v3);
             		}
-HXLINE( 123)		this->add(this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >());
-HXLINE( 124)		this->add(this->choices->get(::Choice_obj::FLEE_dyn()).StaticCast<  ::flixel::text::FlxText >());
-HXLINE( 126)		Float _hx_tmp7 = (this->background->x + 10);
-HXDLIN( 126)		Float _hx_tmp8 = this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->y;
-HXDLIN( 126)		this->pointer =  ::flixel::FlxSprite_obj::__alloc( HX_CTX ,_hx_tmp7,((_hx_tmp8 + (this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))) - ( (Float)(8) )),HX_("assets/images/pointer.png",ad,e2,d4,86));
-HXLINE( 127)		this->pointer->set_visible(false);
-HXLINE( 128)		this->add(this->pointer);
-HXLINE( 131)		this->damages = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 132)		::Array< ::Dynamic> _hx_tmp9 = this->damages;
-HXDLIN( 132)		_hx_tmp9->push( ::flixel::text::FlxText_obj::__alloc( HX_CTX ,0,0,40,null(),null(),null()));
-HXLINE( 133)		::Array< ::Dynamic> _hx_tmp10 = this->damages;
-HXDLIN( 133)		_hx_tmp10->push( ::flixel::text::FlxText_obj::__alloc( HX_CTX ,0,0,40,null(),null(),null()));
-HXLINE( 134)		{
-HXLINE( 134)			int _g = 0;
-HXDLIN( 134)			::Array< ::Dynamic> _g1 = this->damages;
-HXDLIN( 134)			while((_g < _g1->length)){
-HXLINE( 134)				 ::flixel::text::FlxText d = _g1->__get(_g).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 134)				_g = (_g + 1);
-HXLINE( 136)				d->set_color(-1);
-HXLINE( 137)				{
-HXLINE( 137)					d->set_borderStyle(::flixel::text::FlxTextBorderStyle_obj::SHADOW_dyn());
-HXDLIN( 137)					d->set_borderColor(-65536);
-HXDLIN( 137)					d->set_borderSize(( (Float)(1) ));
-HXDLIN( 137)					d->set_borderQuality(( (Float)(1) ));
+HXLINE( 130)		this->add(this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >());
+HXLINE( 131)		this->add(this->choices->get(::Choice_obj::FLEE_dyn()).StaticCast<  ::flixel::text::FlxText >());
+HXLINE( 133)		Float _hx_tmp7 = (this->background->x + 10);
+HXDLIN( 133)		Float _hx_tmp8 = this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->y;
+HXDLIN( 133)		this->pointer =  ::flixel::FlxSprite_obj::__alloc( HX_CTX ,_hx_tmp7,((_hx_tmp8 + (this->choices->get(::Choice_obj::FIGHT_dyn()).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))) - ( (Float)(8) )),HX_("assets/images/pointer.png",ad,e2,d4,86));
+HXLINE( 134)		this->pointer->set_visible(false);
+HXLINE( 135)		this->add(this->pointer);
+HXLINE( 138)		this->damages = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 139)		::Array< ::Dynamic> _hx_tmp9 = this->damages;
+HXDLIN( 139)		_hx_tmp9->push( ::flixel::text::FlxText_obj::__alloc( HX_CTX ,0,0,40,null(),null(),null()));
+HXLINE( 140)		::Array< ::Dynamic> _hx_tmp10 = this->damages;
+HXDLIN( 140)		_hx_tmp10->push( ::flixel::text::FlxText_obj::__alloc( HX_CTX ,0,0,40,null(),null(),null()));
+HXLINE( 141)		{
+HXLINE( 141)			int _g = 0;
+HXDLIN( 141)			::Array< ::Dynamic> _g1 = this->damages;
+HXDLIN( 141)			while((_g < _g1->length)){
+HXLINE( 141)				 ::flixel::text::FlxText d = _g1->__get(_g).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 141)				_g = (_g + 1);
+HXLINE( 143)				d->set_color(-1);
+HXLINE( 144)				{
+HXLINE( 144)					d->set_borderStyle(::flixel::text::FlxTextBorderStyle_obj::SHADOW_dyn());
+HXDLIN( 144)					d->set_borderColor(-65536);
+HXDLIN( 144)					d->set_borderSize(( (Float)(1) ));
+HXDLIN( 144)					d->set_borderQuality(( (Float)(1) ));
             				}
-HXLINE( 138)				d->set_alignment(HX_("center",d5,25,db,05));
-HXLINE( 139)				d->set_visible(false);
-HXLINE( 140)				this->add(d);
+HXLINE( 145)				d->set_alignment(HX_("center",d5,25,db,05));
+HXLINE( 146)				d->set_visible(false);
+HXLINE( 147)				this->add(d);
             			}
             		}
-HXLINE( 144)		this->results =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,(this->background->x + 2),(this->background->y + 9),116,HX_("",00,00,00,00),18,null());
-HXLINE( 145)		this->results->set_alignment(HX_("center",d5,25,db,05));
-HXLINE( 146)		this->results->set_color(-256);
-HXLINE( 147)		{
-HXLINE( 147)			 ::flixel::text::FlxText _this1 = this->results;
-HXDLIN( 147)			_this1->set_borderStyle(::flixel::text::FlxTextBorderStyle_obj::SHADOW_dyn());
-HXDLIN( 147)			_this1->set_borderColor(-8355712);
-HXDLIN( 147)			_this1->set_borderSize(( (Float)(1) ));
-HXDLIN( 147)			_this1->set_borderQuality(( (Float)(1) ));
+HXLINE( 151)		this->results =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,(this->background->x + 2),(this->background->y + 9),116,HX_("",00,00,00,00),18,null());
+HXLINE( 152)		this->results->set_alignment(HX_("center",d5,25,db,05));
+HXLINE( 153)		this->results->set_color(-256);
+HXLINE( 154)		{
+HXLINE( 154)			 ::flixel::text::FlxText _this1 = this->results;
+HXDLIN( 154)			_this1->set_borderStyle(::flixel::text::FlxTextBorderStyle_obj::SHADOW_dyn());
+HXDLIN( 154)			_this1->set_borderColor(-8355712);
+HXDLIN( 154)			_this1->set_borderSize(( (Float)(1) ));
+HXDLIN( 154)			_this1->set_borderQuality(( (Float)(1) ));
             		}
-HXLINE( 148)		this->results->set_visible(false);
-HXLINE( 149)		this->add(this->results);
-HXLINE( 152)		this->forEach( ::Dynamic(new _hx_Closure_0()),null());
-HXLINE( 159)		this->set_active(false);
-HXLINE( 160)		this->set_visible(false);
-HXLINE( 162)		this->fledSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/fled.wav",99,48,e9,2c),null(),null(),null(),null(),null(),null(),null(),null());
-HXLINE( 163)		this->hurtSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/hurt.wav",83,52,9c,7e),null(),null(),null(),null(),null(),null(),null(),null());
-HXLINE( 164)		this->loseSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/lose.wav",49,fb,3d,2d),null(),null(),null(),null(),null(),null(),null(),null());
-HXLINE( 165)		this->missSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/miss.wav",f0,c3,8b,7c),null(),null(),null(),null(),null(),null(),null(),null());
-HXLINE( 166)		this->selectSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/select.wav",70,c5,65,3e),null(),null(),null(),null(),null(),null(),null(),null());
-HXLINE( 167)		this->winSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/win.wav",64,1f,16,45),null(),null(),null(),null(),null(),null(),null(),null());
-HXLINE( 168)		this->combatSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/combat.wav",a8,b6,e7,66),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 155)		this->results->set_visible(false);
+HXLINE( 156)		this->add(this->results);
+HXLINE( 159)		this->forEach( ::Dynamic(new _hx_Closure_0()),null());
+HXLINE( 166)		this->set_active(false);
+HXLINE( 167)		this->set_visible(false);
+HXLINE( 169)		this->fledSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/fled.wav",99,48,e9,2c),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 170)		this->hurtSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/hurt.wav",83,52,9c,7e),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 171)		this->loseSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/lose.wav",49,fb,3d,2d),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 172)		this->missSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/miss.wav",f0,c3,8b,7c),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 173)		this->selectSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/select.wav",70,c5,65,3e),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 174)		this->winSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/win.wav",64,1f,16,45),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 175)		this->combatSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/combat.wav",a8,b6,e7,66),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 176)		this->combatMusic = ::flixel::FlxG_obj::sound->load(HX_("assets/music/battlemusic.wav",35,2e,1e,36),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE( 177)		this->combatMusic->looped = true;
             	}
 
 Dynamic CombatHUD_obj::__CreateEmpty() { return new CombatHUD_obj; }
@@ -357,47 +361,47 @@ bool CombatHUD_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void CombatHUD_obj::initCombat(int playerHealth, ::Enemy enemy){
-            	HX_GC_STACKFRAME(&_hx_pos_94bd977f46f9a023_177_initCombat)
-HXLINE( 178)		this->screen->drawFrame(null());
-HXLINE( 179)		 ::openfl::display::BitmapData screenPixels = this->screen->framePixels;
-HXLINE( 181)		if (::flixel::FlxG_obj::renderBlit) {
-HXLINE( 182)			 ::openfl::display::BitmapData _hx_tmp = ::flixel::FlxG_obj::camera->buffer;
-HXDLIN( 182)			 ::openfl::geom::Rectangle _hx_tmp1 = ::flixel::FlxG_obj::camera->buffer->rect;
-HXDLIN( 182)			screenPixels->copyPixels(_hx_tmp,_hx_tmp1, ::openfl::geom::Point_obj::__alloc( HX_CTX ,null(),null()),null(),null(),null());
+            	HX_GC_STACKFRAME(&_hx_pos_94bd977f46f9a023_186_initCombat)
+HXLINE( 187)		this->screen->drawFrame(null());
+HXLINE( 188)		 ::openfl::display::BitmapData screenPixels = this->screen->framePixels;
+HXLINE( 190)		if (::flixel::FlxG_obj::renderBlit) {
+HXLINE( 191)			 ::openfl::display::BitmapData _hx_tmp = ::flixel::FlxG_obj::camera->buffer;
+HXDLIN( 191)			 ::openfl::geom::Rectangle _hx_tmp1 = ::flixel::FlxG_obj::camera->buffer->rect;
+HXDLIN( 191)			screenPixels->copyPixels(_hx_tmp,_hx_tmp1, ::openfl::geom::Point_obj::__alloc( HX_CTX ,null(),null()),null(),null(),null());
             		}
             		else {
-HXLINE( 184)			 ::openfl::display::Sprite _hx_tmp2 = ::flixel::FlxG_obj::camera->canvas;
-HXDLIN( 184)			screenPixels->draw(_hx_tmp2, ::openfl::geom::Matrix_obj::__alloc( HX_CTX ,1,0,0,1,0,0),null(),null(),null(),null());
+HXLINE( 193)			 ::openfl::display::Sprite _hx_tmp2 = ::flixel::FlxG_obj::camera->canvas;
+HXDLIN( 193)			screenPixels->draw(_hx_tmp2, ::openfl::geom::Matrix_obj::__alloc( HX_CTX ,1,0,0,1,0,0),null(),null(),null(),null());
             		}
-HXLINE( 186)		Float rc = ((Float)0.33333333333333331);
-HXLINE( 187)		Float gc = ((Float)0.5);
-HXLINE( 188)		Float bc = ((Float)0.16666666666666666);
-HXLINE( 189)		 ::openfl::geom::Rectangle screenPixels1 = screenPixels->rect;
-HXDLIN( 189)		 ::openfl::geom::Point _hx_tmp3 =  ::openfl::geom::Point_obj::__alloc( HX_CTX ,null(),null());
-HXDLIN( 189)		screenPixels->applyFilter(screenPixels,screenPixels1,_hx_tmp3, ::openfl::filters::ColorMatrixFilter_obj::__alloc( HX_CTX ,::Array_obj< Float >::__new(20)->init(0,rc)->init(1,gc)->init(2,bc)->init(3,0)->init(4,0)->init(5,rc)->init(6,gc)->init(7,bc)->init(8,0)->init(9,0)->init(10,rc)->init(11,gc)->init(12,bc)->init(13,0)->init(14,0)->init(15,0)->init(16,0)->init(17,0)->init(18,1)->init(19,0)));
-HXLINE( 192)		this->combatSound->play(null(),null(),null());
-HXLINE( 193)		this->playerHealth = playerHealth;
-HXLINE( 194)		this->enemy = enemy;
-HXLINE( 196)		this->updatePlayerHealth();
-HXLINE( 198)		int _hx_tmp4;
-HXDLIN( 198)		if (::hx::IsPointerEq( enemy->type,::EnemyType_obj::REGULAR_dyn() )) {
-HXLINE( 198)			_hx_tmp4 = 2;
+HXLINE( 195)		Float rc = ((Float)0.33333333333333331);
+HXLINE( 196)		Float gc = ((Float)0.5);
+HXLINE( 197)		Float bc = ((Float)0.16666666666666666);
+HXLINE( 198)		 ::openfl::geom::Rectangle screenPixels1 = screenPixels->rect;
+HXDLIN( 198)		 ::openfl::geom::Point _hx_tmp3 =  ::openfl::geom::Point_obj::__alloc( HX_CTX ,null(),null());
+HXDLIN( 198)		screenPixels->applyFilter(screenPixels,screenPixels1,_hx_tmp3, ::openfl::filters::ColorMatrixFilter_obj::__alloc( HX_CTX ,::Array_obj< Float >::__new(20)->init(0,rc)->init(1,gc)->init(2,bc)->init(3,0)->init(4,0)->init(5,rc)->init(6,gc)->init(7,bc)->init(8,0)->init(9,0)->init(10,rc)->init(11,gc)->init(12,bc)->init(13,0)->init(14,0)->init(15,0)->init(16,0)->init(17,0)->init(18,1)->init(19,0)));
+HXLINE( 201)		this->combatSound->play(null(),null(),null());
+HXLINE( 202)		this->playerHealth = playerHealth;
+HXLINE( 203)		this->enemy = enemy;
+HXLINE( 205)		this->updatePlayerHealth();
+HXLINE( 207)		int _hx_tmp4;
+HXDLIN( 207)		if (::hx::IsPointerEq( enemy->type,::EnemyType_obj::REGULAR_dyn() )) {
+HXLINE( 207)			_hx_tmp4 = 2;
             		}
             		else {
-HXLINE( 198)			_hx_tmp4 = 4;
+HXLINE( 207)			_hx_tmp4 = 4;
             		}
-HXDLIN( 198)		this->enemyMaxHealth = (this->enemyHealth = _hx_tmp4);
-HXLINE( 199)		this->enemyHealthBar->set_value(( (Float)(100) ));
-HXLINE( 200)		this->enemySprite->changeType(enemy->type);
-HXLINE( 203)		this->wait = true;
-HXLINE( 204)		this->results->set_text(HX_("",00,00,00,00));
-HXLINE( 205)		this->pointer->set_visible(false);
-HXLINE( 206)		this->results->set_visible(false);
-HXLINE( 207)		this->outcome = ::Outcome_obj::NONE_dyn();
-HXLINE( 208)		this->selected = ::Choice_obj::FIGHT_dyn();
-HXLINE( 209)		this->movePointer();
-HXLINE( 211)		this->set_visible(true);
-HXLINE( 214)		::flixel::tweens::FlxTween_obj::num(( (Float)(0) ),( (Float)(1) ),((Float).66), ::Dynamic(::hx::Anon_obj::Create(2)
+HXDLIN( 207)		this->enemyMaxHealth = (this->enemyHealth = _hx_tmp4);
+HXLINE( 208)		this->enemyHealthBar->set_value(( (Float)(100) ));
+HXLINE( 209)		this->enemySprite->changeType(enemy->type);
+HXLINE( 212)		this->wait = true;
+HXLINE( 213)		this->results->set_text(HX_("",00,00,00,00));
+HXLINE( 214)		this->pointer->set_visible(false);
+HXLINE( 215)		this->results->set_visible(false);
+HXLINE( 216)		this->outcome = ::Outcome_obj::NONE_dyn();
+HXLINE( 217)		this->selected = ::Choice_obj::FIGHT_dyn();
+HXLINE( 218)		this->movePointer();
+HXLINE( 220)		this->set_visible(true);
+HXLINE( 223)		::flixel::tweens::FlxTween_obj::num(( (Float)(0) ),( (Float)(1) ),((Float).66), ::Dynamic(::hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circOut_dyn())
             			->setFixed(1,HX_("onComplete",f8,d4,7e,5d),this->finishFadeIn_dyn())),this->updateAlpha_dyn());
             	}
@@ -408,101 +412,105 @@ HX_DEFINE_DYNAMIC_FUNC2(CombatHUD_obj,initCombat,(void))
 void CombatHUD_obj::updateAlpha(Float alpha){
             		HX_BEGIN_LOCAL_FUNC_S1(::hx::LocalFunc,_hx_Closure_0,Float,alpha) HXARGC(1)
             		void _hx_run( ::flixel::FlxSprite sprite){
-            			HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_223_updateAlpha)
-HXLINE( 223)			sprite->set_alpha(alpha);
+            			HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_232_updateAlpha)
+HXLINE( 232)			sprite->set_alpha(alpha);
             		}
             		HX_END_LOCAL_FUNC1((void))
 
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_221_updateAlpha)
-HXLINE( 222)		this->alpha = alpha;
-HXLINE( 223)		this->forEach( ::Dynamic(new _hx_Closure_0(alpha)),null());
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_230_updateAlpha)
+HXLINE( 231)		this->alpha = alpha;
+HXLINE( 232)		this->forEach( ::Dynamic(new _hx_Closure_0(alpha)),null());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,updateAlpha,(void))
 
 void CombatHUD_obj::finishFadeIn( ::flixel::tweens::FlxTween _){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_230_finishFadeIn)
-HXLINE( 231)		this->set_active(true);
-HXLINE( 232)		this->wait = false;
-HXLINE( 233)		this->pointer->set_visible(true);
-HXLINE( 234)		this->selectSound->play(null(),null(),null());
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_239_finishFadeIn)
+HXLINE( 240)		this->set_active(true);
+HXLINE( 241)		this->wait = false;
+HXLINE( 242)		this->pointer->set_visible(true);
+HXLINE( 243)		this->selectSound->play(true,((Float)0.0),null());
+HXLINE( 244)		this->combatMusic->play(null(),null(),null());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,finishFadeIn,(void))
 
 void CombatHUD_obj::finishFadeOut( ::flixel::tweens::FlxTween _){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_241_finishFadeOut)
-HXLINE( 242)		this->set_active(false);
-HXLINE( 243)		this->set_visible(false);
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_251_finishFadeOut)
+HXLINE( 252)		this->set_active(false);
+HXLINE( 253)		this->set_visible(false);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,finishFadeOut,(void))
 
 void CombatHUD_obj::updatePlayerHealth(){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_250_updatePlayerHealth)
-HXLINE( 251)		this->playerHealthCounter->set_text((this->playerHealth + HX_(" / 3",e2,99,4a,15)));
-HXLINE( 252)		 ::flixel::text::FlxText _hx_tmp = this->playerHealthCounter;
-HXDLIN( 252)		Float _hx_tmp1 = (this->playerSprite->x + 4);
-HXDLIN( 252)		_hx_tmp->set_x((_hx_tmp1 - (this->playerHealthCounter->get_width() / ( (Float)(2) ))));
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_260_updatePlayerHealth)
+HXLINE( 261)		this->playerHealthCounter->set_text((this->playerHealth + HX_(" / 3",e2,99,4a,15)));
+HXLINE( 262)		 ::flixel::text::FlxText _hx_tmp = this->playerHealthCounter;
+HXDLIN( 262)		Float _hx_tmp1 = (this->playerSprite->x + 4);
+HXDLIN( 262)		_hx_tmp->set_x((_hx_tmp1 - (this->playerHealthCounter->get_width() / ( (Float)(2) ))));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CombatHUD_obj,updatePlayerHealth,(void))
 
 void CombatHUD_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_256_update)
-HXLINE( 257)		if (!(this->wait)) {
-HXLINE( 259)			this->updateKeyboardInput();
-HXLINE( 260)			this->updateTouchInput();
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_266_update)
+HXLINE( 267)		if (!(this->wait)) {
+HXLINE( 269)			this->updateKeyboardInput();
+HXLINE( 270)			this->updateTouchInput();
             		}
-HXLINE( 262)		this->super::update(elapsed);
+HXLINE( 272)		this->super::update(elapsed);
+HXLINE( 274)		if (this->playerSprite->animation->get_finished()) {
+HXLINE( 275)			this->playerSprite->animation->play(HX_("combat_idle",3f,76,33,08),null(),null(),null());
+            		}
             	}
 
 
 void CombatHUD_obj::updateKeyboardInput(){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_266_updateKeyboardInput)
-HXLINE( 269)		bool up = false;
-HXLINE( 270)		bool down = false;
-HXLINE( 271)		bool fire = false;
-HXLINE( 274)		if (::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_0c6cd4c3_11,3),-1)) {
-HXLINE( 276)			fire = true;
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_280_updateKeyboardInput)
+HXLINE( 283)		bool up = false;
+HXLINE( 284)		bool down = false;
+HXLINE( 285)		bool fire = false;
+HXLINE( 288)		if (::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_0c6cd4c3_11,3),-1)) {
+HXLINE( 290)			fire = true;
             		}
             		else {
-HXLINE( 278)			if (::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_0c6cd4c3_12,2),-1)) {
-HXLINE( 280)				up = true;
+HXLINE( 292)			if (::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_0c6cd4c3_12,2),-1)) {
+HXLINE( 294)				up = true;
             			}
             			else {
-HXLINE( 282)				if (::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_0c6cd4c3_13,2),-1)) {
-HXLINE( 284)					down = true;
+HXLINE( 296)				if (::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_0c6cd4c3_13,2),-1)) {
+HXLINE( 298)					down = true;
             				}
             			}
             		}
-HXLINE( 288)		if (fire) {
-HXLINE( 290)			this->selectSound->play(null(),null(),null());
-HXLINE( 291)			this->makeChoice();
+HXLINE( 302)		if (fire) {
+HXLINE( 305)			this->selectSound->play(null(),null(),null());
+HXLINE( 306)			this->makeChoice();
             		}
             		else {
-HXLINE( 293)			bool _hx_tmp;
-HXDLIN( 293)			if (!(up)) {
-HXLINE( 293)				_hx_tmp = down;
+HXLINE( 308)			bool _hx_tmp;
+HXDLIN( 308)			if (!(up)) {
+HXLINE( 308)				_hx_tmp = down;
             			}
             			else {
-HXLINE( 293)				_hx_tmp = true;
+HXLINE( 308)				_hx_tmp = true;
             			}
-HXDLIN( 293)			if (_hx_tmp) {
-HXLINE( 296)				 ::Choice _hx_tmp1;
-HXDLIN( 296)				if (::hx::IsPointerEq( this->selected,::Choice_obj::FIGHT_dyn() )) {
-HXLINE( 296)					_hx_tmp1 = ::Choice_obj::FLEE_dyn();
+HXDLIN( 308)			if (_hx_tmp) {
+HXLINE( 311)				 ::Choice _hx_tmp1;
+HXDLIN( 311)				if (::hx::IsPointerEq( this->selected,::Choice_obj::FIGHT_dyn() )) {
+HXLINE( 311)					_hx_tmp1 = ::Choice_obj::FLEE_dyn();
             				}
             				else {
-HXLINE( 296)					_hx_tmp1 = ::Choice_obj::FIGHT_dyn();
+HXLINE( 311)					_hx_tmp1 = ::Choice_obj::FIGHT_dyn();
             				}
-HXDLIN( 296)				this->selected = _hx_tmp1;
-HXLINE( 297)				this->selectSound->play(null(),null(),null());
-HXLINE( 298)				this->movePointer();
+HXDLIN( 311)				this->selected = _hx_tmp1;
+HXLINE( 312)				this->selectSound->play(null(),null(),null());
+HXLINE( 313)				this->movePointer();
             			}
             		}
             	}
@@ -511,155 +519,161 @@ HXLINE( 298)				this->movePointer();
 HX_DEFINE_DYNAMIC_FUNC0(CombatHUD_obj,updateKeyboardInput,(void))
 
 void CombatHUD_obj::updateTouchInput(){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_304_updateTouchInput)
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_319_updateTouchInput)
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CombatHUD_obj,updateTouchInput,(void))
 
 void CombatHUD_obj::movePointer(){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_329_movePointer)
-HXDLIN( 329)		 ::flixel::FlxSprite _hx_tmp = this->pointer;
-HXDLIN( 329)		Float _hx_tmp1 = this->choices->get(this->selected).StaticCast<  ::flixel::text::FlxText >()->y;
-HXDLIN( 329)		_hx_tmp->set_y(((_hx_tmp1 + (this->choices->get(this->selected).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))) - ( (Float)(8) )));
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_344_movePointer)
+HXDLIN( 344)		 ::flixel::FlxSprite _hx_tmp = this->pointer;
+HXDLIN( 344)		Float _hx_tmp1 = this->choices->get(this->selected).StaticCast<  ::flixel::text::FlxText >()->y;
+HXDLIN( 344)		_hx_tmp->set_y(((_hx_tmp1 + (this->choices->get(this->selected).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))) - ( (Float)(8) )));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CombatHUD_obj,movePointer,(void))
 
 void CombatHUD_obj::makeChoice(){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_336_makeChoice)
-HXDLIN( 336)		 ::CombatHUD _gthis = ::hx::ObjectPtr<OBJ_>(this);
-HXLINE( 337)		this->pointer->set_visible(false);
-HXLINE( 338)		switch((int)(this->selected->_hx_getIndex())){
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_351_makeChoice)
+HXDLIN( 351)		 ::CombatHUD _gthis = ::hx::ObjectPtr<OBJ_>(this);
+HXLINE( 352)		this->pointer->set_visible(false);
+HXLINE( 353)		switch((int)(this->selected->_hx_getIndex())){
             			case (int)0: {
-HXLINE( 344)				if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 85)) {
+HXLINE( 359)				if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 85)) {
             					HX_BEGIN_LOCAL_FUNC_S1(::hx::LocalFunc,_hx_Closure_0, ::CombatHUD,_gthis) HXARGC(1)
             					void _hx_run( ::flixel::tweens::FlxTween _){
-            						HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_351_makeChoice)
-HXLINE( 351)						::flixel::tweens::FlxTween_obj::tween(_gthis->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
+            						HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_366_makeChoice)
+HXLINE( 366)						::flixel::tweens::FlxTween_obj::tween(_gthis->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
             							->setFixed(0,HX_("x",78,00,00,00),(_gthis->enemySprite->x - ( (Float)(4) )))),((Float)0.1),null());
             					}
             					HX_END_LOCAL_FUNC1((void))
 
             					HX_BEGIN_LOCAL_FUNC_S1(::hx::LocalFunc,_hx_Closure_1, ::CombatHUD,_gthis) HXARGC(1)
             					void _hx_run( ::flixel::tweens::FlxTween _){
-            						HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_357_makeChoice)
-HXLINE( 357)						::flixel::tweens::FlxTween_obj::tween(_gthis->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
+            						HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_372_makeChoice)
+HXLINE( 372)						::flixel::tweens::FlxTween_obj::tween(_gthis->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
             							->setFixed(0,HX_("x",78,00,00,00),(_gthis->enemySprite->x - ( (Float)(4) )))),((Float)0.1),null());
             					}
             					HX_END_LOCAL_FUNC1((void))
 
-HXLINE( 347)					this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("1",31,00,00,00));
-HXLINE( 348)					::flixel::tweens::FlxTween_obj::tween(this->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE( 362)					this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("1",31,00,00,00));
+HXLINE( 363)					::flixel::tweens::FlxTween_obj::tween(this->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("x",78,00,00,00),(this->enemySprite->x + 4))),((Float)0.1), ::Dynamic(::hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("onComplete",f8,d4,7e,5d), ::Dynamic(new _hx_Closure_0(_gthis)))));
-HXLINE( 354)					::flixel::tweens::FlxTween_obj::tween(this->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE( 369)					::flixel::tweens::FlxTween_obj::tween(this->enemySprite, ::Dynamic(::hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("x",78,00,00,00),(this->enemySprite->x + 4))),((Float)0.1), ::Dynamic(::hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("onComplete",f8,d4,7e,5d), ::Dynamic(new _hx_Closure_1(_gthis)))));
-HXLINE( 360)					this->hurtSound->play(null(),null(),null());
-HXLINE( 361)					this->enemyHealth--;
-HXLINE( 362)					this->enemyHealthBar->set_value(((( (Float)(this->enemyHealth) ) / ( (Float)(this->enemyMaxHealth) )) * ( (Float)(100) )));
+HXLINE( 375)					this->hurtSound->play(null(),null(),null());
+HXLINE( 376)					this->enemyHealth--;
+HXLINE( 377)					this->enemyHealthBar->set_value(((( (Float)(this->enemyHealth) ) / ( (Float)(this->enemyMaxHealth) )) * ( (Float)(100) )));
             				}
             				else {
-HXLINE( 367)					this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("MISS!",a5,81,5a,86));
-HXLINE( 368)					this->missSound->play(null(),null(),null());
+HXLINE( 382)					this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("MISS!",a5,81,5a,86));
+HXLINE( 383)					this->missSound->play(null(),null(),null());
             				}
-HXLINE( 372)				 ::flixel::text::FlxText _hx_tmp = this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 372)				Float _hx_tmp1 = (this->enemySprite->x + 2);
-HXDLIN( 372)				_hx_tmp->set_x((_hx_tmp1 - (this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->get_width() / ( (Float)(2) ))));
-HXLINE( 373)				 ::flixel::text::FlxText _hx_tmp2 = this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 373)				Float _hx_tmp3 = (this->enemySprite->y + 4);
-HXDLIN( 373)				_hx_tmp2->set_y((_hx_tmp3 - (this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))));
-HXLINE( 374)				this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_alpha(( (Float)(0) ));
-HXLINE( 375)				this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_visible(true);
-HXLINE( 378)				if ((this->enemyHealth > 0)) {
-HXLINE( 380)					this->enemyAttack();
+HXLINE( 387)				 ::flixel::text::FlxText _hx_tmp = this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 387)				Float _hx_tmp1 = (this->enemySprite->x + 2);
+HXDLIN( 387)				_hx_tmp->set_x((_hx_tmp1 - (this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->get_width() / ( (Float)(2) ))));
+HXLINE( 388)				 ::flixel::text::FlxText _hx_tmp2 = this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 388)				Float _hx_tmp3 = (this->enemySprite->y + 4);
+HXDLIN( 388)				_hx_tmp2->set_y((_hx_tmp3 - (this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))));
+HXLINE( 389)				this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_alpha(( (Float)(0) ));
+HXLINE( 390)				this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_visible(true);
+HXLINE( 393)				if ((this->enemyHealth > 0)) {
+HXLINE( 395)					this->enemyAttack();
             				}
-HXLINE( 384)				::flixel::tweens::FlxTween_obj::num(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y,(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y - ( (Float)(12) )),1, ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE( 399)				::flixel::tweens::FlxTween_obj::num(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y,(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y - ( (Float)(12) )),1, ::Dynamic(::hx::Anon_obj::Create(1)
             					->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circOut_dyn())),this->updateDamageY_dyn());
-HXLINE( 385)				::flixel::tweens::FlxTween_obj::num(( (Float)(0) ),( (Float)(1) ),((Float).2), ::Dynamic(::hx::Anon_obj::Create(2)
+HXLINE( 400)				::flixel::tweens::FlxTween_obj::num(( (Float)(0) ),( (Float)(1) ),((Float).2), ::Dynamic(::hx::Anon_obj::Create(2)
             					->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circInOut_dyn())
             					->setFixed(1,HX_("onComplete",f8,d4,7e,5d),this->doneDamageIn_dyn())),this->updateDamageAlpha_dyn());
             			}
             			break;
             			case (int)1: {
-HXLINE( 389)				if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 50)) {
-HXLINE( 392)					this->outcome = ::Outcome_obj::ESCAPE_dyn();
-HXLINE( 393)					this->results->set_text(HX_("ESCAPED!",1e,cd,18,52));
-HXLINE( 394)					this->fledSound->play(null(),null(),null());
-HXLINE( 395)					this->results->set_visible(true);
-HXLINE( 396)					this->results->set_alpha(( (Float)(0) ));
-HXLINE( 397)					::flixel::tweens::FlxTween_obj::tween(this->results, ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE( 404)				if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 50)) {
+HXLINE( 407)					this->outcome = ::Outcome_obj::ESCAPE_dyn();
+HXLINE( 408)					this->results->set_text(HX_("ESCAPED!",1e,cd,18,52));
+HXLINE( 409)					this->fledSound->play(null(),null(),null());
+HXLINE( 410)					this->results->set_visible(true);
+HXLINE( 411)					this->results->set_alpha(( (Float)(0) ));
+HXLINE( 412)					{
+HXLINE( 412)						 ::flixel::sound::FlxSound _this = this->combatMusic;
+HXDLIN( 412)						_this->cleanup(_this->autoDestroy,true);
+            					}
+HXLINE( 413)					::flixel::tweens::FlxTween_obj::tween(this->results, ::Dynamic(::hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("alpha",5e,a7,96,21),1)),((Float).66), ::Dynamic(::hx::Anon_obj::Create(2)
             						->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circInOut_dyn())
             						->setFixed(1,HX_("onComplete",f8,d4,7e,5d),this->doneResultsIn_dyn())));
             				}
             				else {
-HXLINE( 402)					this->enemyAttack();
-HXLINE( 403)					::flixel::tweens::FlxTween_obj::num(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y,(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y - ( (Float)(12) )),1, ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE( 418)					this->enemyAttack();
+HXLINE( 419)					::flixel::tweens::FlxTween_obj::num(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y,(this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->y - ( (Float)(12) )),1, ::Dynamic(::hx::Anon_obj::Create(1)
             						->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circOut_dyn())),this->updateDamageY_dyn());
-HXLINE( 404)					::flixel::tweens::FlxTween_obj::num(( (Float)(0) ),( (Float)(1) ),((Float).2), ::Dynamic(::hx::Anon_obj::Create(2)
+HXLINE( 420)					::flixel::tweens::FlxTween_obj::num(( (Float)(0) ),( (Float)(1) ),((Float).2), ::Dynamic(::hx::Anon_obj::Create(2)
             						->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circInOut_dyn())
             						->setFixed(1,HX_("onComplete",f8,d4,7e,5d),this->doneDamageIn_dyn())),this->updateDamageAlpha_dyn());
             				}
             			}
             			break;
             		}
-HXLINE( 409)		this->wait = true;
+HXLINE( 425)		this->wait = true;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CombatHUD_obj,makeChoice,(void))
 
 void CombatHUD_obj::enemyAttack(){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_416_enemyAttack)
-HXLINE( 418)		if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 30)) {
-HXLINE( 421)			::flixel::FlxG_obj::camera->flash(-1,((Float).2),null(),null());
-HXLINE( 422)			::flixel::FlxG_obj::camera->shake(((Float)0.01),((Float)0.2),null(),null(),null());
-HXLINE( 423)			this->hurtSound->play(null(),null(),null());
-HXLINE( 424)			this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("1",31,00,00,00));
-HXLINE( 425)			this->playerHealth--;
-HXLINE( 426)			this->updatePlayerHealth();
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_432_enemyAttack)
+HXLINE( 434)		if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 30)) {
+HXLINE( 437)			::flixel::FlxG_obj::camera->flash(-1,((Float).2),null(),null());
+HXLINE( 438)			::flixel::FlxG_obj::camera->shake(((Float)0.01),((Float)0.2),null(),null(),null());
+HXLINE( 439)			this->hurtSound->play(null(),null(),null());
+HXLINE( 440)			this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("1",31,00,00,00));
+HXLINE( 441)			this->playerHealth--;
+HXLINE( 442)			this->playerSprite->animation->play(HX_("hurt",0f,5c,17,45),null(),null(),null());
+HXLINE( 444)			this->updatePlayerHealth();
             		}
             		else {
-HXLINE( 431)			this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("MISS!",a5,81,5a,86));
-HXLINE( 432)			this->missSound->play(null(),null(),null());
+HXLINE( 449)			this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("MISS!",a5,81,5a,86));
+HXLINE( 450)			this->playerSprite->animation->play(HX_("dodge",d7,ec,bc,dd),null(),null(),null());
+HXLINE( 451)			this->missSound->play(null(),null(),null());
             		}
-HXLINE( 436)		 ::flixel::text::FlxText _hx_tmp = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 436)		Float _hx_tmp1 = (this->playerSprite->x + 2);
-HXDLIN( 436)		_hx_tmp->set_x((_hx_tmp1 - (this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->get_width() / ( (Float)(2) ))));
-HXLINE( 437)		 ::flixel::text::FlxText _hx_tmp2 = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 437)		Float _hx_tmp3 = (this->playerSprite->y + 4);
-HXDLIN( 437)		_hx_tmp2->set_y((_hx_tmp3 - (this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))));
-HXLINE( 438)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_alpha(( (Float)(0) ));
-HXLINE( 439)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_visible(true);
+HXLINE( 455)		 ::flixel::text::FlxText _hx_tmp = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 455)		Float _hx_tmp1 = (this->playerSprite->x + 2);
+HXDLIN( 455)		_hx_tmp->set_x((_hx_tmp1 - (this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->get_width() / ( (Float)(2) ))));
+HXLINE( 456)		 ::flixel::text::FlxText _hx_tmp2 = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 456)		Float _hx_tmp3 = (this->playerSprite->y + 4);
+HXDLIN( 456)		_hx_tmp2->set_y((_hx_tmp3 - (this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->get_height() / ( (Float)(2) ))));
+HXLINE( 457)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_alpha(( (Float)(0) ));
+HXLINE( 458)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_visible(true);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CombatHUD_obj,enemyAttack,(void))
 
 void CombatHUD_obj::updateDamageY(Float damageY){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_447_updateDamageY)
-HXDLIN( 447)		 ::flixel::text::FlxText _hx_tmp = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 447)		_hx_tmp->set_y(this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_y(damageY));
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_466_updateDamageY)
+HXDLIN( 466)		 ::flixel::text::FlxText _hx_tmp = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 466)		_hx_tmp->set_y(this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_y(damageY));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,updateDamageY,(void))
 
 void CombatHUD_obj::updateDamageAlpha(Float damageAlpha){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_455_updateDamageAlpha)
-HXDLIN( 455)		 ::flixel::text::FlxText _hx_tmp = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
-HXDLIN( 455)		_hx_tmp->set_alpha(this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_alpha(damageAlpha));
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_474_updateDamageAlpha)
+HXDLIN( 474)		 ::flixel::text::FlxText _hx_tmp = this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >();
+HXDLIN( 474)		_hx_tmp->set_alpha(this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_alpha(damageAlpha));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,updateDamageAlpha,(void))
 
 void CombatHUD_obj::doneDamageIn( ::flixel::tweens::FlxTween _){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_463_doneDamageIn)
-HXDLIN( 463)		::flixel::tweens::FlxTween_obj::num(( (Float)(1) ),( (Float)(0) ),((Float).66), ::Dynamic(::hx::Anon_obj::Create(3)
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_482_doneDamageIn)
+HXDLIN( 482)		::flixel::tweens::FlxTween_obj::num(( (Float)(1) ),( (Float)(0) ),((Float).66), ::Dynamic(::hx::Anon_obj::Create(3)
             			->setFixed(0,HX_("startDelay",c1,af,3d,f3),1)
             			->setFixed(1,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circInOut_dyn())
             			->setFixed(2,HX_("onComplete",f8,d4,7e,5d),this->doneDamageOut_dyn())),this->updateDamageAlpha_dyn());
@@ -669,8 +683,8 @@ HXDLIN( 463)		::flixel::tweens::FlxTween_obj::num(( (Float)(1) ),( (Float)(0) ),
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,doneDamageIn,(void))
 
 void CombatHUD_obj::doneResultsIn( ::flixel::tweens::FlxTween _){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_471_doneResultsIn)
-HXDLIN( 471)		::flixel::tweens::FlxTween_obj::num(( (Float)(1) ),( (Float)(0) ),((Float).66), ::Dynamic(::hx::Anon_obj::Create(3)
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_490_doneResultsIn)
+HXDLIN( 490)		::flixel::tweens::FlxTween_obj::num(( (Float)(1) ),( (Float)(0) ),((Float).66), ::Dynamic(::hx::Anon_obj::Create(3)
             			->setFixed(0,HX_("startDelay",c1,af,3d,f3),1)
             			->setFixed(1,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circOut_dyn())
             			->setFixed(2,HX_("onComplete",f8,d4,7e,5d),this->finishFadeOut_dyn())),this->updateAlpha_dyn());
@@ -680,37 +694,41 @@ HXDLIN( 471)		::flixel::tweens::FlxTween_obj::num(( (Float)(1) ),( (Float)(0) ),
 HX_DEFINE_DYNAMIC_FUNC1(CombatHUD_obj,doneResultsIn,(void))
 
 void CombatHUD_obj::doneDamageOut( ::flixel::tweens::FlxTween _){
-            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_479_doneDamageOut)
-HXLINE( 480)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_visible(false);
-HXLINE( 481)		this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_visible(false);
-HXLINE( 482)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("",00,00,00,00));
-HXLINE( 483)		this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("",00,00,00,00));
-HXLINE( 485)		if ((this->playerHealth <= 0)) {
-HXLINE( 488)			this->outcome = ::Outcome_obj::DEFEAT_dyn();
-HXLINE( 489)			this->loseSound->play(null(),null(),null());
-HXLINE( 490)			this->results->set_text(HX_("DEFEAT!",ce,60,2d,1e));
-HXLINE( 491)			this->results->set_visible(true);
-HXLINE( 492)			this->results->set_alpha(( (Float)(0) ));
-HXLINE( 493)			::flixel::tweens::FlxTween_obj::tween(this->results, ::Dynamic(::hx::Anon_obj::Create(1)
+            	HX_STACKFRAME(&_hx_pos_94bd977f46f9a023_498_doneDamageOut)
+HXLINE( 499)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_visible(false);
+HXLINE( 500)		this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_visible(false);
+HXLINE( 501)		this->damages->__get(0).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("",00,00,00,00));
+HXLINE( 502)		this->damages->__get(1).StaticCast<  ::flixel::text::FlxText >()->set_text(HX_("",00,00,00,00));
+HXLINE( 504)		if ((this->playerHealth <= 0)) {
+HXLINE( 507)			this->outcome = ::Outcome_obj::DEFEAT_dyn();
+HXLINE( 508)			this->loseSound->play(null(),null(),null());
+HXLINE( 509)			this->results->set_text(HX_("DEFEAT!",ce,60,2d,1e));
+HXLINE( 510)			this->results->set_visible(true);
+HXLINE( 511)			this->results->set_alpha(( (Float)(0) ));
+HXLINE( 512)			::flixel::tweens::FlxTween_obj::tween(this->results, ::Dynamic(::hx::Anon_obj::Create(1)
             				->setFixed(0,HX_("alpha",5e,a7,96,21),1)),((Float)0.66), ::Dynamic(::hx::Anon_obj::Create(2)
             				->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circInOut_dyn())
             				->setFixed(1,HX_("onComplete",f8,d4,7e,5d),this->doneResultsIn_dyn())));
             		}
             		else {
-HXLINE( 495)			if ((this->enemyHealth <= 0)) {
-HXLINE( 498)				this->outcome = ::Outcome_obj::VICTORY_dyn();
-HXLINE( 499)				this->winSound->play(null(),null(),null());
-HXLINE( 500)				this->results->set_text(HX_("VICTORY!",2f,7c,99,6e));
-HXLINE( 501)				this->results->set_visible(true);
-HXLINE( 502)				this->results->set_alpha(( (Float)(0) ));
-HXLINE( 503)				::flixel::tweens::FlxTween_obj::tween(this->results, ::Dynamic(::hx::Anon_obj::Create(1)
+HXLINE( 514)			if ((this->enemyHealth <= 0)) {
+HXLINE( 517)				this->outcome = ::Outcome_obj::VICTORY_dyn();
+HXLINE( 518)				this->winSound->play(null(),null(),null());
+HXLINE( 519)				this->results->set_text(HX_("VICTORY!",2f,7c,99,6e));
+HXLINE( 520)				this->results->set_visible(true);
+HXLINE( 521)				this->results->set_alpha(( (Float)(0) ));
+HXLINE( 522)				{
+HXLINE( 522)					 ::flixel::sound::FlxSound _this = this->combatMusic;
+HXDLIN( 522)					_this->cleanup(_this->autoDestroy,true);
+            				}
+HXLINE( 523)				::flixel::tweens::FlxTween_obj::tween(this->results, ::Dynamic(::hx::Anon_obj::Create(1)
             					->setFixed(0,HX_("alpha",5e,a7,96,21),1)),((Float)0.66), ::Dynamic(::hx::Anon_obj::Create(2)
             					->setFixed(0,HX_("ease",ee,8b,0c,43),::flixel::tweens::FlxEase_obj::circInOut_dyn())
             					->setFixed(1,HX_("onComplete",f8,d4,7e,5d),this->doneResultsIn_dyn())));
             			}
             			else {
-HXLINE( 508)				this->wait = false;
-HXLINE( 509)				this->pointer->set_visible(true);
+HXLINE( 528)				this->wait = false;
+HXLINE( 529)				this->pointer->set_visible(true);
             			}
             		}
             	}
@@ -749,6 +767,7 @@ void CombatHUD_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(enemyMaxHealth,"enemyMaxHealth");
 	HX_MARK_MEMBER_NAME(enemyHealthBar,"enemyHealthBar");
 	HX_MARK_MEMBER_NAME(playerHealthCounter,"playerHealthCounter");
+	HX_MARK_MEMBER_NAME(spritesheet,"spritesheet");
 	HX_MARK_MEMBER_NAME(damages,"damages");
 	HX_MARK_MEMBER_NAME(pointer,"pointer");
 	HX_MARK_MEMBER_NAME(selected,"selected");
@@ -763,6 +782,7 @@ void CombatHUD_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(selectSound,"selectSound");
 	HX_MARK_MEMBER_NAME(winSound,"winSound");
 	HX_MARK_MEMBER_NAME(combatSound,"combatSound");
+	HX_MARK_MEMBER_NAME(combatMusic,"combatMusic");
 	HX_MARK_MEMBER_NAME(screen,"screen");
 	 ::flixel::group::FlxTypedGroup_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
@@ -780,6 +800,7 @@ void CombatHUD_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(enemyMaxHealth,"enemyMaxHealth");
 	HX_VISIT_MEMBER_NAME(enemyHealthBar,"enemyHealthBar");
 	HX_VISIT_MEMBER_NAME(playerHealthCounter,"playerHealthCounter");
+	HX_VISIT_MEMBER_NAME(spritesheet,"spritesheet");
 	HX_VISIT_MEMBER_NAME(damages,"damages");
 	HX_VISIT_MEMBER_NAME(pointer,"pointer");
 	HX_VISIT_MEMBER_NAME(selected,"selected");
@@ -794,6 +815,7 @@ void CombatHUD_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(selectSound,"selectSound");
 	HX_VISIT_MEMBER_NAME(winSound,"winSound");
 	HX_VISIT_MEMBER_NAME(combatSound,"combatSound");
+	HX_VISIT_MEMBER_NAME(combatMusic,"combatMusic");
 	HX_VISIT_MEMBER_NAME(screen,"screen");
 	 ::flixel::group::FlxTypedGroup_obj::__Visit(HX_VISIT_ARG);
 }
@@ -837,8 +859,10 @@ void CombatHUD_obj::__Visit(HX_VISIT_PARAMS)
 	case 11:
 		if (HX_FIELD_EQ(inName,"enemySprite") ) { return ::hx::Val( enemySprite ); }
 		if (HX_FIELD_EQ(inName,"enemyHealth") ) { return ::hx::Val( enemyHealth ); }
+		if (HX_FIELD_EQ(inName,"spritesheet") ) { return ::hx::Val( spritesheet ); }
 		if (HX_FIELD_EQ(inName,"selectSound") ) { return ::hx::Val( selectSound ); }
 		if (HX_FIELD_EQ(inName,"combatSound") ) { return ::hx::Val( combatSound ); }
+		if (HX_FIELD_EQ(inName,"combatMusic") ) { return ::hx::Val( combatMusic ); }
 		if (HX_FIELD_EQ(inName,"updateAlpha") ) { return ::hx::Val( updateAlpha_dyn() ); }
 		if (HX_FIELD_EQ(inName,"movePointer") ) { return ::hx::Val( movePointer_dyn() ); }
 		if (HX_FIELD_EQ(inName,"enemyAttack") ) { return ::hx::Val( enemyAttack_dyn() ); }
@@ -911,12 +935,14 @@ void CombatHUD_obj::__Visit(HX_VISIT_PARAMS)
 	case 11:
 		if (HX_FIELD_EQ(inName,"enemySprite") ) { enemySprite=inValue.Cast<  ::Enemy >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"enemyHealth") ) { enemyHealth=inValue.Cast< int >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"spritesheet") ) { spritesheet=inValue.Cast<  ::flixel::FlxSprite >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"selectSound") ) { selectSound=inValue.Cast<  ::flixel::sound::FlxSound >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"combatSound") ) { combatSound=inValue.Cast<  ::flixel::sound::FlxSound >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"combatMusic") ) { combatMusic=inValue.Cast<  ::flixel::sound::FlxSound >(); return inValue; }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"playerHealth") ) { playerHealth=inValue.Cast< int >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"playerSprite") ) { playerSprite=inValue.Cast<  ::Player >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"playerSprite") ) { playerSprite=inValue.Cast<  ::CombatPlayer >(); return inValue; }
 		break;
 	case 14:
 		if (HX_FIELD_EQ(inName,"enemyMaxHealth") ) { enemyMaxHealth=inValue.Cast< int >(); return inValue; }
@@ -940,6 +966,7 @@ void CombatHUD_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_("enemyMaxHealth",f8,7e,e8,47));
 	outFields->push(HX_("enemyHealthBar",2f,cf,e9,5d));
 	outFields->push(HX_("playerHealthCounter",9f,55,64,73));
+	outFields->push(HX_("spritesheet",7a,54,95,1f));
 	outFields->push(HX_("damages",24,d1,19,0a));
 	outFields->push(HX_("pointer",bd,c0,21,51));
 	outFields->push(HX_("selected",5b,2a,6d,b1));
@@ -954,6 +981,7 @@ void CombatHUD_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_("selectSound",33,90,37,da));
 	outFields->push(HX_("winSound",13,6f,fc,b3));
 	outFields->push(HX_("combatSound",fb,af,68,23));
+	outFields->push(HX_("combatMusic",d1,f3,f6,b2));
 	outFields->push(HX_("screen",6c,3b,5d,47));
 	super::__GetFields(outFields);
 };
@@ -964,12 +992,13 @@ static ::hx::StorageInfo CombatHUD_obj_sMemberStorageInfo[] = {
 	{::hx::fsInt,(int)offsetof(CombatHUD_obj,playerHealth),HX_("playerHealth",dd,c6,f7,f8)},
 	{::hx::fsObject /*  ::Outcome */ ,(int)offsetof(CombatHUD_obj,outcome),HX_("outcome",92,b8,cf,db)},
 	{::hx::fsObject /*  ::flixel::FlxSprite */ ,(int)offsetof(CombatHUD_obj,background),HX_("background",ee,93,1d,26)},
-	{::hx::fsObject /*  ::Player */ ,(int)offsetof(CombatHUD_obj,playerSprite),HX_("playerSprite",46,7a,87,bf)},
+	{::hx::fsObject /*  ::CombatPlayer */ ,(int)offsetof(CombatHUD_obj,playerSprite),HX_("playerSprite",46,7a,87,bf)},
 	{::hx::fsObject /*  ::Enemy */ ,(int)offsetof(CombatHUD_obj,enemySprite),HX_("enemySprite",6d,48,48,ab)},
 	{::hx::fsInt,(int)offsetof(CombatHUD_obj,enemyHealth),HX_("enemyHealth",04,95,b8,e4)},
 	{::hx::fsInt,(int)offsetof(CombatHUD_obj,enemyMaxHealth),HX_("enemyMaxHealth",f8,7e,e8,47)},
 	{::hx::fsObject /*  ::flixel::ui::FlxBar */ ,(int)offsetof(CombatHUD_obj,enemyHealthBar),HX_("enemyHealthBar",2f,cf,e9,5d)},
 	{::hx::fsObject /*  ::flixel::text::FlxText */ ,(int)offsetof(CombatHUD_obj,playerHealthCounter),HX_("playerHealthCounter",9f,55,64,73)},
+	{::hx::fsObject /*  ::flixel::FlxSprite */ ,(int)offsetof(CombatHUD_obj,spritesheet),HX_("spritesheet",7a,54,95,1f)},
 	{::hx::fsObject /* ::Array< ::Dynamic> */ ,(int)offsetof(CombatHUD_obj,damages),HX_("damages",24,d1,19,0a)},
 	{::hx::fsObject /*  ::flixel::FlxSprite */ ,(int)offsetof(CombatHUD_obj,pointer),HX_("pointer",bd,c0,21,51)},
 	{::hx::fsObject /*  ::Choice */ ,(int)offsetof(CombatHUD_obj,selected),HX_("selected",5b,2a,6d,b1)},
@@ -984,6 +1013,7 @@ static ::hx::StorageInfo CombatHUD_obj_sMemberStorageInfo[] = {
 	{::hx::fsObject /*  ::flixel::sound::FlxSound */ ,(int)offsetof(CombatHUD_obj,selectSound),HX_("selectSound",33,90,37,da)},
 	{::hx::fsObject /*  ::flixel::sound::FlxSound */ ,(int)offsetof(CombatHUD_obj,winSound),HX_("winSound",13,6f,fc,b3)},
 	{::hx::fsObject /*  ::flixel::sound::FlxSound */ ,(int)offsetof(CombatHUD_obj,combatSound),HX_("combatSound",fb,af,68,23)},
+	{::hx::fsObject /*  ::flixel::sound::FlxSound */ ,(int)offsetof(CombatHUD_obj,combatMusic),HX_("combatMusic",d1,f3,f6,b2)},
 	{::hx::fsObject /*  ::flixel::FlxSprite */ ,(int)offsetof(CombatHUD_obj,screen),HX_("screen",6c,3b,5d,47)},
 	{ ::hx::fsUnknown, 0, null()}
 };
@@ -1001,6 +1031,7 @@ static ::String CombatHUD_obj_sMemberFields[] = {
 	HX_("enemyMaxHealth",f8,7e,e8,47),
 	HX_("enemyHealthBar",2f,cf,e9,5d),
 	HX_("playerHealthCounter",9f,55,64,73),
+	HX_("spritesheet",7a,54,95,1f),
 	HX_("damages",24,d1,19,0a),
 	HX_("pointer",bd,c0,21,51),
 	HX_("selected",5b,2a,6d,b1),
@@ -1015,6 +1046,7 @@ static ::String CombatHUD_obj_sMemberFields[] = {
 	HX_("selectSound",33,90,37,da),
 	HX_("winSound",13,6f,fc,b3),
 	HX_("combatSound",fb,af,68,23),
+	HX_("combatMusic",d1,f3,f6,b2),
 	HX_("screen",6c,3b,5d,47),
 	HX_("initCombat",64,6b,6b,cb),
 	HX_("updateAlpha",95,10,2f,07),

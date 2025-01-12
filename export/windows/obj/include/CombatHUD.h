@@ -11,9 +11,9 @@
 #endif
 HX_DECLARE_CLASS0(Choice)
 HX_DECLARE_CLASS0(CombatHUD)
+HX_DECLARE_CLASS0(CombatPlayer)
 HX_DECLARE_CLASS0(Enemy)
 HX_DECLARE_CLASS0(Outcome)
-HX_DECLARE_CLASS0(Player)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
@@ -65,12 +65,13 @@ class HXCPP_CLASS_ATTRIBUTES CombatHUD_obj : public  ::flixel::group::FlxTypedGr
 		int playerHealth;
 		 ::Outcome outcome;
 		 ::flixel::FlxSprite background;
-		 ::Player playerSprite;
+		 ::CombatPlayer playerSprite;
 		 ::Enemy enemySprite;
 		int enemyHealth;
 		int enemyMaxHealth;
 		 ::flixel::ui::FlxBar enemyHealthBar;
 		 ::flixel::text::FlxText playerHealthCounter;
+		 ::flixel::FlxSprite spritesheet;
 		::Array< ::Dynamic> damages;
 		 ::flixel::FlxSprite pointer;
 		 ::Choice selected;
@@ -85,6 +86,7 @@ class HXCPP_CLASS_ATTRIBUTES CombatHUD_obj : public  ::flixel::group::FlxTypedGr
 		 ::flixel::sound::FlxSound selectSound;
 		 ::flixel::sound::FlxSound winSound;
 		 ::flixel::sound::FlxSound combatSound;
+		 ::flixel::sound::FlxSound combatMusic;
 		 ::flixel::FlxSprite screen;
 		void initCombat(int playerHealth, ::Enemy enemy);
 		::Dynamic initCombat_dyn();

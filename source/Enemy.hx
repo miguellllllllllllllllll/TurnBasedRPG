@@ -41,6 +41,8 @@ class Enemy extends FlxSprite
 		animation.add("d_walk", [0, 1, 0, 2], 6);
 		animation.add("lr_walk", [3, 4, 3, 5], 6);
 		animation.add("u_walk", [6, 7, 6, 8], 6);
+        animation.add("hurt", [12, 12, 12, 12], 6, false);
+		animation.add("combat_idle", [15, 16, 17, 16], 6, true);
 		drag.x = drag.y = 10;
 		 // Hitbox
         //Set.size formula: x/2, y/2

@@ -8,6 +8,7 @@ import flixel.sound.FlxSound;
 import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 
 using flixel.util.FlxSpriteUtil;
 
@@ -21,7 +22,7 @@ class PlayState extends FlxState
 	var hud:HUD;
 	var money:Int = 0;
 	var health:Int = 3;
-	var inCombat:Bool = false;
+	public var inCombat:Bool = false;
 	var combatHud:CombatHUD;
 	var ending:Bool;
 	var won:Bool;

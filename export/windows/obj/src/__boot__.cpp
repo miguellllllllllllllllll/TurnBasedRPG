@@ -1180,6 +1180,9 @@
 #ifndef INCLUDED_Enemy
 #include <Enemy.h>
 #endif
+#ifndef INCLUDED_CombatPlayer
+#include <CombatPlayer.h>
+#endif
 #ifndef INCLUDED_flixel_FlxSprite
 #include <flixel/FlxSprite.h>
 #endif
@@ -3626,6 +3629,7 @@ __files__boot();
 ::__ASSET__flixel_sounds_flixel_ogg_obj::__register();
 ::__ASSET__flixel_sounds_beep_ogg_obj::__register();
 ::Enemy_obj::__register();
+::CombatPlayer_obj::__register();
 ::flixel::FlxSprite_obj::__register();
 ::flixel::FlxObject_obj::__register();
 ::flixel::math::FlxRect_obj::__register();
@@ -4384,6 +4388,7 @@ __files__boot();
 ::flixel::math::FlxRect_obj::__boot();
 ::flixel::FlxObject_obj::__boot();
 ::flixel::FlxSprite_obj::__boot();
+::CombatPlayer_obj::__boot();
 ::Enemy_obj::__boot();
 ::__ASSET__flixel_sounds_beep_ogg_obj::__boot();
 ::__ASSET__flixel_sounds_flixel_ogg_obj::__boot();

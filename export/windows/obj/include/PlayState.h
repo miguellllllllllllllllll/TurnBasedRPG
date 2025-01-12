@@ -91,8 +91,11 @@ class HXCPP_CLASS_ATTRIBUTES PlayState_obj : public  ::flixel::FlxState_obj
 
 		void update(Float elapsed);
 
-		void doneFadeOut();
-		::Dynamic doneFadeOut_dyn();
+		void doneWinFadeOut();
+		::Dynamic doneWinFadeOut_dyn();
+
+		void doneLoseFadeOut();
+		::Dynamic doneLoseFadeOut_dyn();
 
 		void checkEnemyVision( ::Enemy enemy);
 		::Dynamic checkEnemyVision_dyn();

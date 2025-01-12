@@ -144,8 +144,9 @@ HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_107_playerTouchCoin,"PlayState","p
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_118_playerTouchEnemy,"PlayState","playerTouchEnemy",0xc787e8fb,"PlayState.playerTouchEnemy","PlayState.hx",118,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_125_startCombat,"PlayState","startCombat",0x485abba5,"PlayState.startCombat","PlayState.hx",125,0xb30d7781)
 HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_137_update,"PlayState","update",0x8d182efa,"PlayState.update","PlayState.hx",137,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_197_doneFadeOut,"PlayState","doneFadeOut",0xf3a9b17f,"PlayState.doneFadeOut","PlayState.hx",197,0xb30d7781)
-HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_202_checkEnemyVision,"PlayState","checkEnemyVision",0xe46dc499,"PlayState.checkEnemyVision","PlayState.hx",202,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_197_doneWinFadeOut,"PlayState","doneWinFadeOut",0x3cf820c9,"PlayState.doneWinFadeOut","PlayState.hx",197,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_202_doneLoseFadeOut,"PlayState","doneLoseFadeOut",0x05594eaa,"PlayState.doneLoseFadeOut","PlayState.hx",202,0xb30d7781)
+HX_LOCAL_STACK_FRAME(_hx_pos_af23706db05c7feb_208_checkEnemyVision,"PlayState","checkEnemyVision",0xe46dc499,"PlayState.checkEnemyVision","PlayState.hx",208,0xb30d7781)
 
 void PlayState_obj::__construct(){
             	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_14_new)
@@ -332,7 +333,7 @@ HXLINE( 143)				this->health = this->combatHud->playerHealth;
 HXLINE( 144)				this->hud->updateHUD(this->health,this->money);
 HXLINE( 145)				if (::hx::IsPointerEq( this->combatHud->outcome,::Outcome_obj::DEFEAT_dyn() )) {
 HXLINE( 147)					this->ending = true;
-HXLINE( 148)					::flixel::FlxG_obj::camera->fade(-16777216,((Float)0.33),false,this->doneFadeOut_dyn(),null());
+HXLINE( 148)					::flixel::FlxG_obj::camera->fade(-16777216,((Float)0.33),false,this->doneLoseFadeOut_dyn(),null());
             				}
             				else {
 HXLINE( 152)					if (::hx::IsPointerEq( this->combatHud->outcome,::Outcome_obj::VICTORY_dyn() )) {
@@ -340,7 +341,7 @@ HXLINE( 154)						this->combatHud->enemy->kill();
 HXLINE( 155)						if (::hx::IsPointerEq( this->combatHud->enemy->type,::EnemyType_obj::BOSS_dyn() )) {
 HXLINE( 157)							this->won = true;
 HXLINE( 158)							this->ending = true;
-HXLINE( 159)							::flixel::FlxG_obj::camera->fade(-16777216,((Float)0.33),false,this->doneFadeOut_dyn(),null());
+HXLINE( 159)							::flixel::FlxG_obj::camera->fade(-16777216,((Float)0.33),false,this->doneWinFadeOut_dyn(),null());
             						}
             					}
             					else {
@@ -384,8 +385,8 @@ HXLINE( 192)		this->enemies->forEachAlive(this->checkEnemyVision_dyn(),null());
             	}
 
 
-void PlayState_obj::doneFadeOut(){
-            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_197_doneFadeOut)
+void PlayState_obj::doneWinFadeOut(){
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_197_doneWinFadeOut)
 HXDLIN( 197)		 ::Dynamic nextState = ::flixel::util::typeLimit::_NextState::NextState_Impl__obj::fromState( ::GameOverState_obj::__alloc( HX_CTX ,this->won,this->money));
 HXDLIN( 197)		 ::flixel::FlxState stateOnCall = ::flixel::FlxG_obj::game->_state;
 HXDLIN( 197)		bool _hx_tmp;
@@ -398,7 +399,7 @@ HXDLIN( 197)			_hx_tmp = true;
 HXDLIN( 197)		if (_hx_tmp) {
             			HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_0, ::Dynamic,nextState, ::flixel::FlxState,stateOnCall) HXARGC(0)
             			void _hx_run(){
-            				HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_197_doneFadeOut)
+            				HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_197_doneWinFadeOut)
 HXDLIN( 197)				if (::hx::IsInstanceEq( ::flixel::FlxG_obj::game->_state,stateOnCall )) {
 HXDLIN( 197)					::flixel::FlxG_obj::game->_nextState = nextState;
             				}
@@ -413,18 +414,49 @@ HXDLIN( 197)			::flixel::FlxG_obj::game->_state->startOutro( ::Dynamic(new _hx_C
             	}
 
 
-HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,doneFadeOut,(void))
+HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,doneWinFadeOut,(void))
 
-void PlayState_obj::checkEnemyVision( ::Enemy enemy){
-            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_202_checkEnemyVision)
-HXDLIN( 202)		 ::flixel::tile::FlxTilemap _hx_tmp = this->walls;
-HXDLIN( 202)		 ::flixel::math::FlxBasePoint _hx_tmp1 = enemy->getMidpoint(null());
-HXDLIN( 202)		if (_hx_tmp->ray(_hx_tmp1,this->player->getMidpoint(null()),null())) {
-HXLINE( 204)			enemy->seesPlayer = true;
-HXLINE( 205)			enemy->playerPosition = this->player->getMidpoint(null());
+void PlayState_obj::doneLoseFadeOut(){
+            	HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_202_doneLoseFadeOut)
+HXDLIN( 202)		 ::Dynamic nextState = ::flixel::util::typeLimit::_NextState::NextState_Impl__obj::fromState( ::GameOverState_obj::__alloc( HX_CTX ,this->won,this->money));
+HXDLIN( 202)		 ::flixel::FlxState stateOnCall = ::flixel::FlxG_obj::game->_state;
+HXDLIN( 202)		bool _hx_tmp;
+HXDLIN( 202)		if (::Std_obj::isOfType(nextState,::hx::ClassOf< ::flixel::FlxState >())) {
+HXDLIN( 202)			_hx_tmp = ::flixel::FlxG_obj::canSwitchTo(( ( ::flixel::FlxState)(nextState) ));
             		}
             		else {
-HXLINE( 209)			enemy->seesPlayer = false;
+HXDLIN( 202)			_hx_tmp = true;
+            		}
+HXDLIN( 202)		if (_hx_tmp) {
+            			HX_BEGIN_LOCAL_FUNC_S2(::hx::LocalFunc,_hx_Closure_0, ::Dynamic,nextState, ::flixel::FlxState,stateOnCall) HXARGC(0)
+            			void _hx_run(){
+            				HX_GC_STACKFRAME(&_hx_pos_af23706db05c7feb_202_doneLoseFadeOut)
+HXDLIN( 202)				if (::hx::IsInstanceEq( ::flixel::FlxG_obj::game->_state,stateOnCall )) {
+HXDLIN( 202)					::flixel::FlxG_obj::game->_nextState = nextState;
+            				}
+            				else {
+HXDLIN( 202)					::flixel::FlxG_obj::log->advanced(HX_("`onOutroComplete` was called after the state was switched. This will be ignored",46,b2,58,c7),::flixel::_hx_system::debug::log::LogStyle_obj::WARNING,true);
+            				}
+            			}
+            			HX_END_LOCAL_FUNC0((void))
+
+HXDLIN( 202)			::flixel::FlxG_obj::game->_state->startOutro( ::Dynamic(new _hx_Closure_0(nextState,stateOnCall)));
+            		}
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(PlayState_obj,doneLoseFadeOut,(void))
+
+void PlayState_obj::checkEnemyVision( ::Enemy enemy){
+            	HX_STACKFRAME(&_hx_pos_af23706db05c7feb_208_checkEnemyVision)
+HXDLIN( 208)		 ::flixel::tile::FlxTilemap _hx_tmp = this->walls;
+HXDLIN( 208)		 ::flixel::math::FlxBasePoint _hx_tmp1 = enemy->getMidpoint(null());
+HXDLIN( 208)		if (_hx_tmp->ray(_hx_tmp1,this->player->getMidpoint(null()),null())) {
+HXLINE( 210)			enemy->seesPlayer = true;
+HXLINE( 211)			enemy->playerPosition = this->player->getMidpoint(null());
+            		}
+            		else {
+HXLINE( 215)			enemy->seesPlayer = false;
             		}
             	}
 
@@ -519,13 +551,16 @@ void PlayState_obj::__Visit(HX_VISIT_PARAMS)
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"startCombat") ) { return ::hx::Val( startCombat_dyn() ); }
-		if (HX_FIELD_EQ(inName,"doneFadeOut") ) { return ::hx::Val( doneFadeOut_dyn() ); }
 		break;
 	case 13:
 		if (HX_FIELD_EQ(inName,"placeEntities") ) { return ::hx::Val( placeEntities_dyn() ); }
 		break;
+	case 14:
+		if (HX_FIELD_EQ(inName,"doneWinFadeOut") ) { return ::hx::Val( doneWinFadeOut_dyn() ); }
+		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"playerTouchCoin") ) { return ::hx::Val( playerTouchCoin_dyn() ); }
+		if (HX_FIELD_EQ(inName,"doneLoseFadeOut") ) { return ::hx::Val( doneLoseFadeOut_dyn() ); }
 		break;
 	case 16:
 		if (HX_FIELD_EQ(inName,"playerTouchEnemy") ) { return ::hx::Val( playerTouchEnemy_dyn() ); }
@@ -623,7 +658,8 @@ static ::String PlayState_obj_sMemberFields[] = {
 	HX_("playerTouchEnemy",ca,48,30,6f),
 	HX_("startCombat",36,6e,0c,3f),
 	HX_("update",09,86,05,87),
-	HX_("doneFadeOut",10,64,5b,ea),
+	HX_("doneWinFadeOut",d8,9e,b9,d2),
+	HX_("doneLoseFadeOut",bb,1d,e6,78),
 	HX_("checkEnemyVision",68,24,16,8c),
 	::String(null()) };
 

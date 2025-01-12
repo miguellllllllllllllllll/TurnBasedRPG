@@ -6,7 +6,7 @@
 #include <hxcpp.h>
 #endif
 
-HX_DECLARE_STACK_FRAME(_hx_pos_5de81b3c4b5a507c_156_new)
+HX_DECLARE_STACK_FRAME(_hx_pos_5de81b3c4b5a507c_158_new)
 HX_DECLARE_CLASS0(FSM)
 
 
@@ -37,8 +37,8 @@ class HXCPP_CLASS_ATTRIBUTES FSM_obj : public ::hx::Object
 			FSM_obj *__this = (FSM_obj*)(::hx::Ctx::alloc(_hx_ctx, sizeof(FSM_obj), true, "FSM"));
 			*(void **)__this = FSM_obj::_hx_vtable;
 {
-            	HX_STACKFRAME(&_hx_pos_5de81b3c4b5a507c_156_new)
-HXDLIN( 156)		( ( ::FSM)(__this) )->activeState = initialState;
+            	HX_STACKFRAME(&_hx_pos_5de81b3c4b5a507c_158_new)
+HXDLIN( 158)		( ( ::FSM)(__this) )->activeState = initialState;
             	}
 		
 			return __this;

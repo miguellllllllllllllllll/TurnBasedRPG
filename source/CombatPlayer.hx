@@ -33,7 +33,8 @@ class CombatPlayer extends FlxSprite
         animation.add("lr_walk", [3, 4, 3, 5], 6);
         animation.add("u_walk", [6, 7, 6, 8], 6);
         animation.add("combat_idle", [0, 1, 0, 2], 6, true);
-        animation.add("dodge",[9, 10, 11, 9, 0],6);
+        animation.add("dodge",[9, 10, 11, 9],6, false);
+        animation.add("hurt", [14, 14 , 14 , 14], 6, false);
 
     }
     

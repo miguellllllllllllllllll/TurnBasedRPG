@@ -9,6 +9,7 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
+HX_DECLARE_CLASS0(CombatPlayer)
 HX_DECLARE_CLASS0(GameOverState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
@@ -17,6 +18,7 @@ HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedContainer)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,input,IFlxInput)
+HX_DECLARE_CLASS2(flixel,sound,FlxSound)
 HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
@@ -62,6 +64,9 @@ class HXCPP_CLASS_ATTRIBUTES GameOverState_obj : public  ::flixel::FlxState_obj
 		 ::flixel::text::FlxText scoreText;
 		 ::flixel::text::FlxText highscoreText;
 		 ::flixel::ui::FlxButton mainMenuButton;
+		 ::flixel::sound::FlxSound gameoversound;
+		 ::flixel::FlxSprite background;
+		 ::CombatPlayer playerSprite;
 		int checkHighscore(int score);
 		::Dynamic checkHighscore_dyn();
 

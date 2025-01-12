@@ -5,12 +5,12 @@
 #include <FSM.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_5de81b3c4b5a507c_156_new,"FSM","new",0x0313b752,"FSM.new","Enemy.hx",156,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_5de81b3c4b5a507c_161_update,"FSM","update",0x2caf0257,"FSM.update","Enemy.hx",161,0xbda88996)
+HX_DEFINE_STACK_FRAME(_hx_pos_5de81b3c4b5a507c_158_new,"FSM","new",0x0313b752,"FSM.new","Enemy.hx",158,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_5de81b3c4b5a507c_163_update,"FSM","update",0x2caf0257,"FSM.update","Enemy.hx",163,0xbda88996)
 
 void FSM_obj::__construct( ::Dynamic initialState){
-            	HX_STACKFRAME(&_hx_pos_5de81b3c4b5a507c_156_new)
-HXDLIN( 156)		this->activeState = initialState;
+            	HX_STACKFRAME(&_hx_pos_5de81b3c4b5a507c_158_new)
+HXDLIN( 158)		this->activeState = initialState;
             	}
 
 Dynamic FSM_obj::__CreateEmpty() { return new FSM_obj; }
@@ -29,8 +29,8 @@ bool FSM_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void FSM_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_5de81b3c4b5a507c_161_update)
-HXDLIN( 161)		this->activeState(elapsed);
+            	HX_STACKFRAME(&_hx_pos_5de81b3c4b5a507c_163_update)
+HXDLIN( 163)		this->activeState(elapsed);
             	}
 
 

@@ -7,8 +7,8 @@
 
 HX_LOCAL_STACK_FRAME(_hx_pos_a71b198b2cf5b646_268_boot,"AssetPaths","boot",0x7f6e2362,"AssetPaths.boot","flixel/system/macros/FlxAssetPaths.hx",268,0x71054749)
 HX_LOCAL_STACK_FRAME(_hx_pos_a71b198b2cf5b646_76_boot,"AssetPaths","boot",0x7f6e2362,"AssetPaths.boot","flixel/system/macros/FlxAssetPaths.hx",76,0x71054749)
-static const ::String _hx_array_data_60e60f3e_34[] = {
-	HX_("assets/data/room-001.json",9e,bc,95,49),HX_("assets/data/turnBasedRPG.ogmo",9c,c1,64,b5),HX_("assets/images/a_frieza_sprite_sheet_by_spritemaker20_ddds9p0-375w-2x.jpg",06,71,d6,c9),HX_("assets/images/boss.png",13,fa,25,fc),HX_("assets/images/button.png",98,1b,b6,cd),HX_("assets/images/coin.png",f7,e9,c5,54),HX_("assets/images/cooler.png",1c,e3,b8,7f),HX_("assets/images/d1o46mc-778261bb-32f7-4394-ba7e-b5b816ddb8d5.png",40,24,f2,2d),HX_("assets/images/df1pu9n-72139eb3-7e6a-4f66-8bc8-1bf18f3564a5.png",bc,8f,2e,be),HX_("assets/images/enemies.png",16,33,fe,81),HX_("assets/images/enemy.png",78,ee,d4,3b),HX_("assets/images/frieza.png",f5,50,d6,5a),HX_("assets/images/Game Boy Advance - Dragon Ball Z The Legacy of Goku II - Cooler.png",d9,01,e7,1d),HX_("assets/images/gokuportrait.png",93,2a,54,34),HX_("assets/images/Goku_Player.png",5e,c2,ea,93),HX_("assets/images/goku_sprite.png",02,c9,79,7f),HX_("assets/images/haxe-logo.png",e2,f3,19,33),HX_("assets/images/health.png",42,7f,55,20),HX_("assets/images/logo.jpg",09,3d,37,1e),HX_("assets/images/player.png",87,88,81,c6),HX_("assets/images/pointer.png",ad,e2,d4,86),HX_("assets/images/tiles.png",35,bc,d1,f5),HX_("assets/music/bardockthegoat.mp3",3e,40,cd,2f),HX_("assets/music/coin.wav",05,95,81,59),HX_("assets/music/combat.wav",a8,b6,e7,66),HX_("assets/music/fled.wav",99,48,e9,2c),HX_("assets/music/hurt.wav",83,52,9c,7e),HX_("assets/music/lose.wav",49,fb,3d,2d),HX_("assets/music/miss.wav",f0,c3,8b,7c),HX_("assets/music/select.wav",70,c5,65,3e),HX_("assets/music/step.wav",40,c0,f3,49),HX_("assets/music/win.wav",64,1f,16,45),HX_("assets/sounds/sounds-go-here.txt",8d,b6,3d,a7),
+static const ::String _hx_array_data_60e60f3e_36[] = {
+	HX_("assets/data/room-001.json",9e,bc,95,49),HX_("assets/data/turnBasedRPG.ogmo",9c,c1,64,b5),HX_("assets/images/a_frieza_sprite_sheet_by_spritemaker20_ddds9p0-375w-2x.jpg",06,71,d6,c9),HX_("assets/images/boss.png",13,fa,25,fc),HX_("assets/images/button.png",98,1b,b6,cd),HX_("assets/images/coin.png",f7,e9,c5,54),HX_("assets/images/cooler.png",1c,e3,b8,7f),HX_("assets/images/d1o46mc-778261bb-32f7-4394-ba7e-b5b816ddb8d5.png",40,24,f2,2d),HX_("assets/images/df1pu9n-72139eb3-7e6a-4f66-8bc8-1bf18f3564a5.png",bc,8f,2e,be),HX_("assets/images/enemies.png",16,33,fe,81),HX_("assets/images/enemy.png",78,ee,d4,3b),HX_("assets/images/frieza.png",f5,50,d6,5a),HX_("assets/images/Game Boy Advance - Dragon Ball Z The Legacy of Goku II - Cooler.png",d9,01,e7,1d),HX_("assets/images/gokuportrait.png",93,2a,54,34),HX_("assets/images/Goku_Player.png",5e,c2,ea,93),HX_("assets/images/goku_sprite.png",02,c9,79,7f),HX_("assets/images/haxe-logo.png",e2,f3,19,33),HX_("assets/images/health.png",42,7f,55,20),HX_("assets/images/logo.jpg",09,3d,37,1e),HX_("assets/images/player.png",87,88,81,c6),HX_("assets/images/pointer.png",ad,e2,d4,86),HX_("assets/images/tiles.png",35,bc,d1,f5),HX_("assets/music/bardockthegoat.mp3",3e,40,cd,2f),HX_("assets/music/battlemusic.wav",35,2e,1e,36),HX_("assets/music/coin.wav",05,95,81,59),HX_("assets/music/combat.wav",a8,b6,e7,66),HX_("assets/music/fled.wav",99,48,e9,2c),HX_("assets/music/gameoversound.mp3",55,81,bb,5f),HX_("assets/music/hurt.wav",83,52,9c,7e),HX_("assets/music/lose.wav",49,fb,3d,2d),HX_("assets/music/miss.wav",f0,c3,8b,7c),HX_("assets/music/select.wav",70,c5,65,3e),HX_("assets/music/step.wav",40,c0,f3,49),HX_("assets/music/win.wav",64,1f,16,45),HX_("assets/sounds/sounds-go-here.txt",8d,b6,3d,a7),
 };
 
 void AssetPaths_obj::__construct() { }
@@ -74,11 +74,15 @@ bool AssetPaths_obj::_hx_isInstanceOf(int inClassId) {
 
 ::String AssetPaths_obj::bardockthegoat__mp3;
 
+::String AssetPaths_obj::battlemusic__wav;
+
 ::String AssetPaths_obj::coin__wav;
 
 ::String AssetPaths_obj::combat__wav;
 
 ::String AssetPaths_obj::fled__wav;
+
+::String AssetPaths_obj::gameoversound__mp3;
 
 ::String AssetPaths_obj::hurt__wav;
 
@@ -145,9 +149,11 @@ static ::hx::StaticInfo AssetPaths_obj_sStaticStorageInfo[] = {
 	{::hx::fsString,(void *) &AssetPaths_obj::pointer__png,HX_("pointer__png",ac,2f,2b,00)},
 	{::hx::fsString,(void *) &AssetPaths_obj::tiles__png,HX_("tiles__png",e4,9d,3e,1d)},
 	{::hx::fsString,(void *) &AssetPaths_obj::bardockthegoat__mp3,HX_("bardockthegoat__mp3",0a,66,8b,d3)},
+	{::hx::fsString,(void *) &AssetPaths_obj::battlemusic__wav,HX_("battlemusic__wav",7f,36,99,a9)},
 	{::hx::fsString,(void *) &AssetPaths_obj::coin__wav,HX_("coin__wav",db,7e,01,5c)},
 	{::hx::fsString,(void *) &AssetPaths_obj::combat__wav,HX_("combat__wav",58,b5,a5,01)},
 	{::hx::fsString,(void *) &AssetPaths_obj::fled__wav,HX_("fled__wav",c7,ec,56,83)},
+	{::hx::fsString,(void *) &AssetPaths_obj::gameoversound__mp3,HX_("gameoversound__mp3",e7,56,19,47)},
 	{::hx::fsString,(void *) &AssetPaths_obj::hurt__wav,HX_("hurt__wav",9d,8f,4c,ae)},
 	{::hx::fsString,(void *) &AssetPaths_obj::lose__wav,HX_("lose__wav",17,94,1e,cd)},
 	{::hx::fsString,(void *) &AssetPaths_obj::miss__wav,HX_("miss__wav",90,5d,e0,e1)},
@@ -184,9 +190,11 @@ static void AssetPaths_obj_sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::pointer__png,"pointer__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::tiles__png,"tiles__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::bardockthegoat__mp3,"bardockthegoat__mp3");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::battlemusic__wav,"battlemusic__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::coin__wav,"coin__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::combat__wav,"combat__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::fled__wav,"fled__wav");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::gameoversound__mp3,"gameoversound__mp3");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::hurt__wav,"hurt__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::lose__wav,"lose__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::miss__wav,"miss__wav");
@@ -222,9 +230,11 @@ static void AssetPaths_obj_sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::pointer__png,"pointer__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::tiles__png,"tiles__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::bardockthegoat__mp3,"bardockthegoat__mp3");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::battlemusic__wav,"battlemusic__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::coin__wav,"coin__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::combat__wav,"combat__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::fled__wav,"fled__wav");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::gameoversound__mp3,"gameoversound__mp3");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::hurt__wav,"hurt__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::lose__wav,"lose__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::miss__wav,"miss__wav");
@@ -263,9 +273,11 @@ static ::String AssetPaths_obj_sStaticFields[] = {
 	HX_("pointer__png",ac,2f,2b,00),
 	HX_("tiles__png",e4,9d,3e,1d),
 	HX_("bardockthegoat__mp3",0a,66,8b,d3),
+	HX_("battlemusic__wav",7f,36,99,a9),
 	HX_("coin__wav",db,7e,01,5c),
 	HX_("combat__wav",58,b5,a5,01),
 	HX_("fled__wav",c7,ec,56,83),
+	HX_("gameoversound__mp3",e7,56,19,47),
 	HX_("hurt__wav",9d,8f,4c,ae),
 	HX_("lose__wav",17,94,1e,cd),
 	HX_("miss__wav",90,5d,e0,e1),
@@ -400,6 +412,10 @@ HXDLIN( 268)		bardockthegoat__mp3 = HX_("assets/music/bardockthegoat.mp3",3e,40,
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_268_boot)
+HXDLIN( 268)		battlemusic__wav = HX_("assets/music/battlemusic.wav",35,2e,1e,36);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_268_boot)
 HXDLIN( 268)		coin__wav = HX_("assets/music/coin.wav",05,95,81,59);
             	}
 {
@@ -409,6 +425,10 @@ HXDLIN( 268)		combat__wav = HX_("assets/music/combat.wav",a8,b6,e7,66);
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_268_boot)
 HXDLIN( 268)		fled__wav = HX_("assets/music/fled.wav",99,48,e9,2c);
+            	}
+{
+            	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_268_boot)
+HXDLIN( 268)		gameoversound__mp3 = HX_("assets/music/gameoversound.mp3",55,81,bb,5f);
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_268_boot)
@@ -440,7 +460,7 @@ HXDLIN( 268)		sounds_go_here__txt = HX_("assets/sounds/sounds-go-here.txt",8d,b6
             	}
 {
             	HX_STACKFRAME(&_hx_pos_a71b198b2cf5b646_76_boot)
-HXDLIN(  76)		allFiles = ::Array_obj< ::String >::fromData( _hx_array_data_60e60f3e_34,33);
+HXDLIN(  76)		allFiles = ::Array_obj< ::String >::fromData( _hx_array_data_60e60f3e_36,35);
             	}
 }
 

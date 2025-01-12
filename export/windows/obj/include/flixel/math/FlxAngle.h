@@ -117,6 +117,9 @@ class HXCPP_CLASS_ATTRIBUTES FlxAngle_obj : public ::hx::Object
 		static Float get_TO_RAD();
 		static ::Dynamic get_TO_RAD_dyn();
 
+		static void angleDifference(int enemyAngle, ::Dynamic angleToPlayer);
+		static ::Dynamic angleDifference_dyn();
+
 };
 
 } // end namespace flixel

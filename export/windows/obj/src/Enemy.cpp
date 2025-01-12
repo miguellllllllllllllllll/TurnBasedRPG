@@ -85,10 +85,16 @@ static const int _hx_array_data_03a88228_5[] = {
 static const int _hx_array_data_03a88228_6[] = {
 	(int)6,(int)7,(int)6,(int)8,
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_57_idle,"Enemy","idle",0xe0a9031a,"Enemy.idle","Enemy.hx",57,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_84_chase,"Enemy","chase",0x416ec6e8,"Enemy.chase","Enemy.hx",84,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_96_changeType,"Enemy","changeType",0x98354cd0,"Enemy.changeType","Enemy.hx",96,0xbda88996)
-HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_106_update,"Enemy","update",0xcf0e6f8f,"Enemy.update","Enemy.hx",106,0xbda88996)
+static const int _hx_array_data_03a88228_7[] = {
+	(int)15,(int)16,(int)17,(int)16,
+};
+static const int _hx_array_data_03a88228_8[] = {
+	(int)12,(int)12,(int)12,(int)12,
+};
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_59_idle,"Enemy","idle",0xe0a9031a,"Enemy.idle","Enemy.hx",59,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_86_chase,"Enemy","chase",0x416ec6e8,"Enemy.chase","Enemy.hx",86,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_98_changeType,"Enemy","changeType",0x98354cd0,"Enemy.changeType","Enemy.hx",98,0xbda88996)
+HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_108_update,"Enemy","update",0xcf0e6f8f,"Enemy.update","Enemy.hx",108,0xbda88996)
 HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_19_boot,"Enemy","boot",0xdc10e038,"Enemy.boot","Enemy.hx",19,0xbda88996)
 HX_LOCAL_STACK_FRAME(_hx_pos_c595a05c1c7a687d_20_boot,"Enemy","boot",0xdc10e038,"Enemy.boot","Enemy.hx",20,0xbda88996)
 
@@ -116,18 +122,20 @@ HXLINE(  40)		this->animation->add(HX_("u_idle",5e,fa,85,c0),::Array_obj< int >:
 HXLINE(  41)		this->animation->add(HX_("d_walk",04,8e,b3,fd),::Array_obj< int >::fromData( _hx_array_data_03a88228_4,4),6,null(),null(),null());
 HXLINE(  42)		this->animation->add(HX_("lr_walk",a2,b4,c0,21),::Array_obj< int >::fromData( _hx_array_data_03a88228_5,4),6,null(),null(),null());
 HXLINE(  43)		this->animation->add(HX_("u_walk",53,b0,c4,c9),::Array_obj< int >::fromData( _hx_array_data_03a88228_6,4),6,null(),null(),null());
-HXLINE(  44)		{
-HXLINE(  44)			 ::flixel::math::FlxBasePoint this1 = this->drag;
-HXDLIN(  44)			this1->set_x(this->drag->set_y(( (Float)(10) )));
+HXLINE(  44)		this->animation->add(HX_("combat_idle",3f,76,33,08),::Array_obj< int >::fromData( _hx_array_data_03a88228_7,4),6,true,null(),null());
+HXLINE(  45)		this->animation->add(HX_("hurt",0f,5c,17,45),::Array_obj< int >::fromData( _hx_array_data_03a88228_8,4),6,false,null(),null());
+HXLINE(  46)		{
+HXLINE(  46)			 ::flixel::math::FlxBasePoint this1 = this->drag;
+HXDLIN(  46)			this1->set_x(this->drag->set_y(( (Float)(10) )));
             		}
-HXLINE(  48)		this->setSize(( (Float)(17) ),( (Float)(22) ));
-HXLINE(  49)		this->offset->set_x(( (Float)(12) ));
-HXLINE(  50)		this->offset->set_y(( (Float)(22) ));
-HXLINE(  51)		this->brain =  ::FSM_obj::__alloc( HX_CTX ,this->idle_dyn());
-HXLINE(  52)		this->idleTimer = ( (Float)(0) );
-HXLINE(  53)		 ::flixel::math::FlxBasePoint point = ::flixel::math::FlxBasePoint_obj::pool->get().StaticCast<  ::flixel::math::FlxBasePoint >()->set(( (Float)(0) ),( (Float)(0) ));
-HXDLIN(  53)		point->_inPool = false;
-HXDLIN(  53)		this->playerPosition = point;
+HXLINE(  50)		this->setSize(( (Float)(17) ),( (Float)(22) ));
+HXLINE(  51)		this->offset->set_x(( (Float)(12) ));
+HXLINE(  52)		this->offset->set_y(( (Float)(22) ));
+HXLINE(  53)		this->brain =  ::FSM_obj::__alloc( HX_CTX ,this->idle_dyn());
+HXLINE(  54)		this->idleTimer = ( (Float)(0) );
+HXLINE(  55)		 ::flixel::math::FlxBasePoint point = ::flixel::math::FlxBasePoint_obj::pool->get().StaticCast<  ::flixel::math::FlxBasePoint >()->set(( (Float)(0) ),( (Float)(0) ));
+HXDLIN(  55)		point->_inPool = false;
+HXDLIN(  55)		this->playerPosition = point;
             	}
 
 Dynamic Enemy_obj::__CreateEmpty() { return new Enemy_obj; }
@@ -154,28 +162,28 @@ bool Enemy_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void Enemy_obj::idle(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_57_idle)
-HXDLIN(  57)		if (this->seesPlayer) {
-HXLINE(  59)			this->brain->activeState = this->chase_dyn();
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_59_idle)
+HXDLIN(  59)		if (this->seesPlayer) {
+HXLINE(  61)			this->brain->activeState = this->chase_dyn();
             		}
             		else {
-HXLINE(  61)			if ((this->idleTimer <= 0)) {
-HXLINE(  64)				if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 95)) {
-HXLINE(  66)					this->moveDirection = ( (Float)((::flixel::FlxG_obj::random->_hx_int(0,8,null()) * 45)) );
-HXLINE(  68)					::flixel::math::_FlxPoint::FlxPoint_Impl__obj::setPolarRadians(this->velocity,((Float)40),(this->moveDirection * (::Math_obj::PI / ( (Float)(180) ))));
+HXLINE(  63)			if ((this->idleTimer <= 0)) {
+HXLINE(  66)				if ((::flixel::FlxG_obj::random->_hx_float(0,100,null()) < 95)) {
+HXLINE(  68)					this->moveDirection = ( (Float)((::flixel::FlxG_obj::random->_hx_int(0,8,null()) * 45)) );
+HXLINE(  70)					::flixel::math::_FlxPoint::FlxPoint_Impl__obj::setPolarRadians(this->velocity,((Float)40),(this->moveDirection * (::Math_obj::PI / ( (Float)(180) ))));
             				}
             				else {
-HXLINE(  72)					this->moveDirection = ( (Float)(-1) );
-HXLINE(  73)					{
-HXLINE(  73)						 ::flixel::math::FlxBasePoint this1 = this->velocity;
-HXDLIN(  73)						this1->set_x(this->velocity->set_y(( (Float)(0) )));
+HXLINE(  74)					this->moveDirection = ( (Float)(-1) );
+HXLINE(  75)					{
+HXLINE(  75)						 ::flixel::math::FlxBasePoint this1 = this->velocity;
+HXDLIN(  75)						this1->set_x(this->velocity->set_y(( (Float)(0) )));
             					}
             				}
-HXLINE(  75)				this->idleTimer = ( (Float)(::flixel::FlxG_obj::random->_hx_int(1,4,null())) );
+HXLINE(  77)				this->idleTimer = ( (Float)(::flixel::FlxG_obj::random->_hx_int(1,4,null())) );
             			}
             			else {
-HXLINE(  78)				 ::Enemy _hx_tmp = ::hx::ObjectPtr<OBJ_>(this);
-HXDLIN(  78)				_hx_tmp->idleTimer = (_hx_tmp->idleTimer - elapsed);
+HXLINE(  80)				 ::Enemy _hx_tmp = ::hx::ObjectPtr<OBJ_>(this);
+HXDLIN(  80)				_hx_tmp->idleTimer = (_hx_tmp->idleTimer - elapsed);
             			}
             		}
             	}
@@ -184,12 +192,12 @@ HXDLIN(  78)				_hx_tmp->idleTimer = (_hx_tmp->idleTimer - elapsed);
 HX_DEFINE_DYNAMIC_FUNC1(Enemy_obj,idle,(void))
 
 void Enemy_obj::chase(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_84_chase)
-HXDLIN(  84)		if (!(this->seesPlayer)) {
-HXLINE(  86)			this->brain->activeState = this->idle_dyn();
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_86_chase)
+HXDLIN(  86)		if (!(this->seesPlayer)) {
+HXLINE(  88)			this->brain->activeState = this->idle_dyn();
             		}
             		else {
-HXLINE(  90)			::flixel::math::FlxVelocity_obj::moveTowardsPoint(::hx::ObjectPtr<OBJ_>(this),this->playerPosition,((Float)70),null());
+HXLINE(  92)			::flixel::math::FlxVelocity_obj::moveTowardsPoint(::hx::ObjectPtr<OBJ_>(this),this->playerPosition,((Float)70),null());
             		}
             	}
 
@@ -197,17 +205,17 @@ HXLINE(  90)			::flixel::math::FlxVelocity_obj::moveTowardsPoint(::hx::ObjectPtr
 HX_DEFINE_DYNAMIC_FUNC1(Enemy_obj,chase,(void))
 
 void Enemy_obj::changeType( ::EnemyType type){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_96_changeType)
-HXDLIN(  96)		if (::hx::IsPointerNotEq( this->type,type )) {
-HXLINE(  98)			this->type = type;
-HXLINE(  99)			::String graphic;
-HXDLIN(  99)			if (::hx::IsPointerEq( type,::EnemyType_obj::BOSS_dyn() )) {
-HXLINE(  99)				graphic = HX_("assets/images/frieza.png",f5,50,d6,5a);
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_98_changeType)
+HXDLIN(  98)		if (::hx::IsPointerNotEq( this->type,type )) {
+HXLINE( 100)			this->type = type;
+HXLINE( 101)			::String graphic;
+HXDLIN( 101)			if (::hx::IsPointerEq( type,::EnemyType_obj::BOSS_dyn() )) {
+HXLINE( 101)				graphic = HX_("assets/images/frieza.png",f5,50,d6,5a);
             			}
             			else {
-HXLINE(  99)				graphic = HX_("assets/images/cooler.png",1c,e3,b8,7f);
+HXLINE( 101)				graphic = HX_("assets/images/cooler.png",1c,e3,b8,7f);
             			}
-HXLINE( 100)			this->loadGraphic(graphic,true,35,44,null(),null());
+HXLINE( 102)			this->loadGraphic(graphic,true,35,44,null(),null());
             		}
             	}
 
@@ -215,55 +223,55 @@ HXLINE( 100)			this->loadGraphic(graphic,true,35,44,null(),null());
 HX_DEFINE_DYNAMIC_FUNC1(Enemy_obj,changeType,(void))
 
 void Enemy_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_106_update)
-HXLINE( 108)		if (::flixel::effects::FlxFlicker_obj::isFlickering(::hx::ObjectPtr<OBJ_>(this))) {
-HXLINE( 109)			return;
+            	HX_STACKFRAME(&_hx_pos_c595a05c1c7a687d_108_update)
+HXLINE( 110)		if (::flixel::effects::FlxFlicker_obj::isFlickering(::hx::ObjectPtr<OBJ_>(this))) {
+HXLINE( 111)			return;
             		}
-HXLINE( 111)		::String action = HX_("idle",14,a7,b3,45);
-HXLINE( 112)		bool _hx_tmp;
-HXDLIN( 112)		if ((this->velocity->x == 0)) {
-HXLINE( 112)			_hx_tmp = (this->velocity->y != 0);
+HXLINE( 113)		::String action = HX_("idle",14,a7,b3,45);
+HXLINE( 114)		bool _hx_tmp;
+HXDLIN( 114)		if ((this->velocity->x == 0)) {
+HXLINE( 114)			_hx_tmp = (this->velocity->y != 0);
             		}
             		else {
-HXLINE( 112)			_hx_tmp = true;
+HXLINE( 114)			_hx_tmp = true;
             		}
-HXDLIN( 112)		if (_hx_tmp) {
-HXLINE( 114)			action = HX_("walk",09,5d,f2,4e);
-HXLINE( 115)			if ((::Math_obj::abs(this->velocity->x) > ::Math_obj::abs(this->velocity->y))) {
-HXLINE( 117)				if ((this->velocity->x < 0)) {
-HXLINE( 118)					this->set_facing(1);
+HXDLIN( 114)		if (_hx_tmp) {
+HXLINE( 116)			action = HX_("walk",09,5d,f2,4e);
+HXLINE( 117)			if ((::Math_obj::abs(this->velocity->x) > ::Math_obj::abs(this->velocity->y))) {
+HXLINE( 119)				if ((this->velocity->x < 0)) {
+HXLINE( 120)					this->set_facing(1);
             				}
             				else {
-HXLINE( 120)					this->set_facing(16);
+HXLINE( 122)					this->set_facing(16);
             				}
             			}
             			else {
-HXLINE( 124)				if ((this->velocity->y < 0)) {
-HXLINE( 125)					this->set_facing(256);
+HXLINE( 126)				if ((this->velocity->y < 0)) {
+HXLINE( 127)					this->set_facing(256);
             				}
             				else {
-HXLINE( 127)					this->set_facing(4096);
+HXLINE( 129)					this->set_facing(4096);
             				}
             			}
             		}
-HXLINE( 131)		switch((int)(this->facing)){
+HXLINE( 133)		switch((int)(this->facing)){
             			case (int)1: case (int)16: {
-HXLINE( 134)				this->animation->play((HX_("lr_",19,57,52,00) + action),null(),null(),null());
+HXLINE( 136)				this->animation->play((HX_("lr_",19,57,52,00) + action),null(),null(),null());
             			}
             			break;
             			case (int)256: {
-HXLINE( 137)				this->animation->play((HX_("u_",4a,66,00,00) + action),null(),null(),null());
+HXLINE( 139)				this->animation->play((HX_("u_",4a,66,00,00) + action),null(),null(),null());
             			}
             			break;
             			case (int)4096: {
-HXLINE( 140)				this->animation->play((HX_("d_",7b,57,00,00) + action),null(),null(),null());
+HXLINE( 142)				this->animation->play((HX_("d_",7b,57,00,00) + action),null(),null(),null());
             			}
             			break;
             			default:{
             			}
             		}
-HXLINE( 144)		this->brain->update(elapsed);
-HXLINE( 145)		this->super::update(elapsed);
+HXLINE( 146)		this->brain->update(elapsed);
+HXLINE( 147)		this->super::update(elapsed);
             	}
 
 

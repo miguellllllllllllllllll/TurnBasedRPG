@@ -79,20 +79,23 @@ static const int _hx_array_data_6c4d5f81_5[] = {
 static const int _hx_array_data_6c4d5f81_6[] = {
 	(int)6,(int)7,(int)6,(int)8,
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_9d6b32c958ffa4d3_47_updateMovement,"Player","updateMovement",0xab7266a5,"Player.updateMovement","Player.hx",47,0xa27fc9dd)
-static const int _hx_array_data_6c4d5f81_8[] = {
+static const int _hx_array_data_6c4d5f81_7[] = {
+	(int)0,(int)1,(int)0,(int)2,
+};
+HX_LOCAL_STACK_FRAME(_hx_pos_9d6b32c958ffa4d3_48_updateMovement,"Player","updateMovement",0xab7266a5,"Player.updateMovement","Player.hx",48,0xa27fc9dd)
+static const int _hx_array_data_6c4d5f81_9[] = {
 	(int)38,(int)87,
 };
-static const int _hx_array_data_6c4d5f81_9[] = {
+static const int _hx_array_data_6c4d5f81_10[] = {
 	(int)40,(int)83,
 };
-static const int _hx_array_data_6c4d5f81_10[] = {
+static const int _hx_array_data_6c4d5f81_11[] = {
 	(int)37,(int)65,
 };
-static const int _hx_array_data_6c4d5f81_11[] = {
+static const int _hx_array_data_6c4d5f81_12[] = {
 	(int)39,(int)68,
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_9d6b32c958ffa4d3_131_update,"Player","update",0xf1f8df56,"Player.update","Player.hx",131,0xa27fc9dd)
+HX_LOCAL_STACK_FRAME(_hx_pos_9d6b32c958ffa4d3_132_update,"Player","update",0xf1f8df56,"Player.update","Player.hx",132,0xa27fc9dd)
 HX_LOCAL_STACK_FRAME(_hx_pos_9d6b32c958ffa4d3_10_boot,"Player","boot",0x156e003f,"Player.boot","Player.hx",10,0xa27fc9dd)
 
 void Player_obj::__construct(::hx::Null< Float >  __o_x,::hx::Null< Float >  __o_y){
@@ -122,11 +125,12 @@ HXLINE(  33)		this->animation->add(HX_("u_idle",5e,fa,85,c0),::Array_obj< int >:
 HXLINE(  34)		this->animation->add(HX_("d_walk",04,8e,b3,fd),::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_4,4),6,null(),null(),null());
 HXLINE(  35)		this->animation->add(HX_("lr_walk",a2,b4,c0,21),::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_5,4),6,null(),null(),null());
 HXLINE(  36)		this->animation->add(HX_("u_walk",53,b0,c4,c9),::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_6,4),6,null(),null(),null());
-HXLINE(  40)		{
-HXLINE(  40)			 ::flixel::math::FlxBasePoint this2 = this->drag;
-HXDLIN(  40)			this2->set_x(this->drag->set_y(( (Float)(800) )));
+HXLINE(  37)		this->animation->add(HX_("combat_idle",3f,76,33,08),::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_7,4),6,true,null(),null());
+HXLINE(  41)		{
+HXLINE(  41)			 ::flixel::math::FlxBasePoint this2 = this->drag;
+HXDLIN(  41)			this2->set_x(this->drag->set_y(( (Float)(800) )));
             		}
-HXLINE(  43)		this->stepSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/step.wav",40,c0,f3,49),null(),null(),null(),null(),null(),null(),null(),null());
+HXLINE(  44)		this->stepSound = ::flixel::FlxG_obj::sound->load(HX_("assets/music/step.wav",40,c0,f3,49),null(),null(),null(),null(),null(),null(),null(),null());
             	}
 
 Dynamic Player_obj::__CreateEmpty() { return new Player_obj; }
@@ -153,110 +157,110 @@ bool Player_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void Player_obj::updateMovement(){
-            	HX_STACKFRAME(&_hx_pos_9d6b32c958ffa4d3_47_updateMovement)
-HXLINE(  49)		bool up = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_8,2),1);
-HXLINE(  50)		bool down = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_9,2),1);
-HXLINE(  51)		bool left = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_10,2),1);
-HXLINE(  52)		bool right = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_11,2),1);
-HXLINE(  64)		{
-HXLINE(  64)			 ::flixel::math::FlxBasePoint this1 = this->velocity;
-HXDLIN(  64)			this1->set_x(( (Float)(0) ));
-HXDLIN(  64)			this1->set_y(( (Float)(0) ));
+            	HX_STACKFRAME(&_hx_pos_9d6b32c958ffa4d3_48_updateMovement)
+HXLINE(  50)		bool up = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_9,2),1);
+HXLINE(  51)		bool down = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_10,2),1);
+HXLINE(  52)		bool left = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_11,2),1);
+HXLINE(  53)		bool right = ::flixel::FlxG_obj::keys->checkKeyArrayState(::Array_obj< int >::fromData( _hx_array_data_6c4d5f81_12,2),1);
+HXLINE(  65)		{
+HXLINE(  65)			 ::flixel::math::FlxBasePoint this1 = this->velocity;
+HXDLIN(  65)			this1->set_x(( (Float)(0) ));
+HXDLIN(  65)			this1->set_y(( (Float)(0) ));
             		}
-HXLINE(  66)		bool moving = false;
-HXLINE(  68)		bool _hx_tmp;
-HXDLIN(  68)		bool _hx_tmp1;
-HXDLIN(  68)		bool _hx_tmp2;
-HXDLIN(  68)		if (!(up)) {
-HXLINE(  68)			_hx_tmp2 = down;
-            		}
-            		else {
-HXLINE(  68)			_hx_tmp2 = true;
-            		}
-HXDLIN(  68)		if (!(_hx_tmp2)) {
-HXLINE(  68)			_hx_tmp1 = left;
+HXLINE(  67)		bool moving = false;
+HXLINE(  69)		bool _hx_tmp;
+HXDLIN(  69)		bool _hx_tmp1;
+HXDLIN(  69)		bool _hx_tmp2;
+HXDLIN(  69)		if (!(up)) {
+HXLINE(  69)			_hx_tmp2 = down;
             		}
             		else {
-HXLINE(  68)			_hx_tmp1 = true;
+HXLINE(  69)			_hx_tmp2 = true;
             		}
-HXDLIN(  68)		if (!(_hx_tmp1)) {
-HXLINE(  68)			_hx_tmp = right;
+HXDLIN(  69)		if (!(_hx_tmp2)) {
+HXLINE(  69)			_hx_tmp1 = left;
             		}
             		else {
-HXLINE(  68)			_hx_tmp = true;
+HXLINE(  69)			_hx_tmp1 = true;
             		}
-HXDLIN(  68)		if (_hx_tmp) {
-HXLINE(  69)			this->stepSound->play(null(),null(),null());
-HXLINE(  70)			Float newAngle = ( (Float)(0) );
-HXLINE(  71)			if (up) {
-HXLINE(  73)				newAngle = ( (Float)(-90) );
-HXLINE(  74)				if (left) {
-HXLINE(  75)					newAngle = (newAngle - ( (Float)(45) ));
+HXDLIN(  69)		if (!(_hx_tmp1)) {
+HXLINE(  69)			_hx_tmp = right;
+            		}
+            		else {
+HXLINE(  69)			_hx_tmp = true;
+            		}
+HXDLIN(  69)		if (_hx_tmp) {
+HXLINE(  70)			this->stepSound->play(null(),null(),null());
+HXLINE(  71)			Float newAngle = ( (Float)(0) );
+HXLINE(  72)			if (up) {
+HXLINE(  74)				newAngle = ( (Float)(-90) );
+HXLINE(  75)				if (left) {
+HXLINE(  76)					newAngle = (newAngle - ( (Float)(45) ));
             				}
             				else {
-HXLINE(  76)					if (right) {
-HXLINE(  77)						newAngle = (newAngle + 45);
+HXLINE(  77)					if (right) {
+HXLINE(  78)						newAngle = (newAngle + 45);
             					}
             				}
-HXLINE(  78)				this->set_facing(256);
+HXLINE(  79)				this->set_facing(256);
             			}
             			else {
-HXLINE(  80)				if (down) {
-HXLINE(  82)					newAngle = ( (Float)(90) );
-HXLINE(  83)					if (left) {
-HXLINE(  84)						newAngle = (newAngle + 45);
+HXLINE(  81)				if (down) {
+HXLINE(  83)					newAngle = ( (Float)(90) );
+HXLINE(  84)					if (left) {
+HXLINE(  85)						newAngle = (newAngle + 45);
             					}
             					else {
-HXLINE(  85)						if (right) {
-HXLINE(  86)							newAngle = (newAngle - ( (Float)(45) ));
+HXLINE(  86)						if (right) {
+HXLINE(  87)							newAngle = (newAngle - ( (Float)(45) ));
             						}
             					}
-HXLINE(  87)					this->set_facing(4096);
+HXLINE(  88)					this->set_facing(4096);
             				}
             				else {
-HXLINE(  89)					if (left) {
-HXLINE(  91)						newAngle = ( (Float)(180) );
-HXLINE(  92)						this->set_facing(1);
+HXLINE(  90)					if (left) {
+HXLINE(  92)						newAngle = ( (Float)(180) );
+HXLINE(  93)						this->set_facing(1);
             					}
             					else {
-HXLINE(  94)						if (right) {
-HXLINE(  96)							newAngle = ( (Float)(0) );
-HXLINE(  97)							this->set_facing(16);
+HXLINE(  95)						if (right) {
+HXLINE(  97)							newAngle = ( (Float)(0) );
+HXLINE(  98)							this->set_facing(16);
             						}
             					}
             				}
             			}
-HXLINE( 101)			::flixel::math::_FlxPoint::FlxPoint_Impl__obj::setPolarRadians(this->velocity,((Float)100),(newAngle * (::Math_obj::PI / ( (Float)(180) ))));
+HXLINE( 102)			::flixel::math::_FlxPoint::FlxPoint_Impl__obj::setPolarRadians(this->velocity,((Float)100),(newAngle * (::Math_obj::PI / ( (Float)(180) ))));
             		}
-HXLINE( 110)		::String action = HX_("idle",14,a7,b3,45);
-HXLINE( 112)		bool _hx_tmp3;
-HXDLIN( 112)		bool _hx_tmp4;
-HXDLIN( 112)		if ((this->velocity->x == 0)) {
-HXLINE( 112)			_hx_tmp4 = (this->velocity->y != 0);
-            		}
-            		else {
-HXLINE( 112)			_hx_tmp4 = true;
-            		}
-HXDLIN( 112)		if (_hx_tmp4) {
-HXLINE( 112)			_hx_tmp3 = (this->touching == 0);
+HXLINE( 111)		::String action = HX_("idle",14,a7,b3,45);
+HXLINE( 113)		bool _hx_tmp3;
+HXDLIN( 113)		bool _hx_tmp4;
+HXDLIN( 113)		if ((this->velocity->x == 0)) {
+HXLINE( 113)			_hx_tmp4 = (this->velocity->y != 0);
             		}
             		else {
-HXLINE( 112)			_hx_tmp3 = false;
+HXLINE( 113)			_hx_tmp4 = true;
             		}
-HXDLIN( 112)		if (_hx_tmp3) {
-HXLINE( 114)			action = HX_("walk",09,5d,f2,4e);
+HXDLIN( 113)		if (_hx_tmp4) {
+HXLINE( 113)			_hx_tmp3 = (this->touching == 0);
             		}
-HXLINE( 117)		switch((int)(this->facing)){
+            		else {
+HXLINE( 113)			_hx_tmp3 = false;
+            		}
+HXDLIN( 113)		if (_hx_tmp3) {
+HXLINE( 115)			action = HX_("walk",09,5d,f2,4e);
+            		}
+HXLINE( 118)		switch((int)(this->facing)){
             			case (int)1: case (int)16: {
-HXLINE( 120)				this->animation->play((HX_("lr_",19,57,52,00) + action),null(),null(),null());
+HXLINE( 121)				this->animation->play((HX_("lr_",19,57,52,00) + action),null(),null(),null());
             			}
             			break;
             			case (int)256: {
-HXLINE( 122)				this->animation->play((HX_("u_",4a,66,00,00) + action),null(),null(),null());
+HXLINE( 123)				this->animation->play((HX_("u_",4a,66,00,00) + action),null(),null(),null());
             			}
             			break;
             			case (int)4096: {
-HXLINE( 124)				this->animation->play((HX_("d_",7b,57,00,00) + action),null(),null(),null());
+HXLINE( 125)				this->animation->play((HX_("d_",7b,57,00,00) + action),null(),null(),null());
             			}
             			break;
             			default:{
@@ -268,9 +272,9 @@ HXLINE( 124)				this->animation->play((HX_("d_",7b,57,00,00) + action),null(),nu
 HX_DEFINE_DYNAMIC_FUNC0(Player_obj,updateMovement,(void))
 
 void Player_obj::update(Float elapsed){
-            	HX_STACKFRAME(&_hx_pos_9d6b32c958ffa4d3_131_update)
-HXLINE( 132)		this->updateMovement();
-HXLINE( 133)		this->super::update(elapsed);
+            	HX_STACKFRAME(&_hx_pos_9d6b32c958ffa4d3_132_update)
+HXLINE( 133)		this->updateMovement();
+HXLINE( 134)		this->super::update(elapsed);
             	}
 
 

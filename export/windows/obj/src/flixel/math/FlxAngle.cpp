@@ -50,6 +50,15 @@
 #ifndef INCLUDED_flixel_util__FlxDirectionFlags_FlxDirectionFlags_Impl_
 #include <flixel/util/_FlxDirectionFlags/FlxDirectionFlags_Impl_.h>
 #endif
+#ifndef INCLUDED_haxe_Exception
+#include <haxe/Exception.h>
+#endif
+#ifndef INCLUDED_haxe_exceptions_NotImplementedException
+#include <haxe/exceptions/NotImplementedException.h>
+#endif
+#ifndef INCLUDED_haxe_exceptions_PosException
+#include <haxe/exceptions/PosException.h>
+#endif
 
 HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_68_radiansFromOrigin,"flixel.math.FlxAngle","radiansFromOrigin",0xe1075149,"flixel.math.FlxAngle.radiansFromOrigin","flixel/math/FlxAngle.hx",68,0x32e99189)
 HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_79_degreesFromOrigin,"flixel.math.FlxAngle","degreesFromOrigin",0x32c462be,"flixel.math.FlxAngle.degreesFromOrigin","flixel/math/FlxAngle.hx",79,0x32e99189)
@@ -71,6 +80,7 @@ HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_360_getCartesianCoords,"flixel.mat
 HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_380_getPolarCoords,"flixel.math.FlxAngle","getPolarCoords",0xf74e15df,"flixel.math.FlxAngle.getPolarCoords","flixel/math/FlxAngle.hx",380,0x32e99189)
 HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_392_get_TO_DEG,"flixel.math.FlxAngle","get_TO_DEG",0x36e6a544,"flixel.math.FlxAngle.get_TO_DEG","flixel/math/FlxAngle.hx",392,0x32e99189)
 HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_397_get_TO_RAD,"flixel.math.FlxAngle","get_TO_RAD",0x36f14153,"flixel.math.FlxAngle.get_TO_RAD","flixel/math/FlxAngle.hx",397,0x32e99189)
+HX_LOCAL_STACK_FRAME(_hx_pos_5b56d9e1983dc02b_402_angleDifference,"flixel.math.FlxAngle","angleDifference",0xa3bcff37,"flixel.math.FlxAngle.angleDifference","flixel/math/FlxAngle.hx",402,0x32e99189)
 namespace flixel{
 namespace math{
 
@@ -328,6 +338,14 @@ HXDLIN( 397)		return (::Math_obj::PI / ( (Float)(180) ));
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(FlxAngle_obj,get_TO_RAD,return )
 
+void FlxAngle_obj::angleDifference(int enemyAngle, ::Dynamic angleToPlayer){
+            	HX_GC_STACKFRAME(&_hx_pos_5b56d9e1983dc02b_402_angleDifference)
+HXDLIN( 402)		HX_STACK_DO_THROW( ::haxe::exceptions::NotImplementedException_obj::__alloc( HX_CTX ,null(),null(),::hx::SourceInfo(HX_("flixel/math/FlxAngle.hx",89,91,e9,32),402,HX_("flixel.math.FlxAngle",f5,97,d6,2c),HX_("angleDifference",b0,09,09,fc))));
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxAngle_obj,angleDifference,(void))
+
 
 FlxAngle_obj::FlxAngle_obj()
 {
@@ -360,6 +378,7 @@ bool FlxAngle_obj::__GetStatic(const ::String &inName, Dynamic &outValue, ::hx::
 	case 15:
 		if (HX_FIELD_EQ(inName,"angleFromOrigin") ) { outValue = angleFromOrigin_dyn(); return true; }
 		if (HX_FIELD_EQ(inName,"angleFromFacing") ) { outValue = angleFromFacing_dyn(); return true; }
+		if (HX_FIELD_EQ(inName,"angleDifference") ) { outValue = angleDifference_dyn(); return true; }
 		break;
 	case 17:
 		if (HX_FIELD_EQ(inName,"radiansFromOrigin") ) { outValue = radiansFromOrigin_dyn(); return true; }
@@ -407,6 +426,7 @@ static ::String FlxAngle_obj_sStaticFields[] = {
 	HX_("getPolarCoords",86,bd,d4,74),
 	HX_("get_TO_DEG",6b,ad,28,42),
 	HX_("get_TO_RAD",7a,49,33,42),
+	HX_("angleDifference",b0,09,09,fc),
 	::String(null())
 };
 

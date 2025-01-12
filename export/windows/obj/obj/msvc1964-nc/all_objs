@@ -319,6 +319,7 @@
 "obj/msvc1964-nc/ef7619cb_StackBlur.obj"
 "obj/msvc1964-nc/4d3a1b16_RenderEventInfo.obj"
 "obj/msvc1964-nc/2fa2422a_JNIStaticField.obj"
+"obj/msvc1964-nc/f505ff26_CombatPlayer.obj"
 "obj/msvc1964-nc/e7bb6f5a_VorbisFile.obj"
 "obj/msvc1964-nc/21877613_BeginGradientFillView_Impl_.obj"
 "obj/msvc1964-nc/a299f5dd_FlxDrawTrianglesItem.obj"

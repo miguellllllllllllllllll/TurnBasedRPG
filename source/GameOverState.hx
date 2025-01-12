@@ -18,6 +18,8 @@ class GameOverState extends FlxState
 	var highscoreText:FlxText; // text to show the highscore
 	var mainMenuButton:FlxButton; // button to go to main menu
 	var gameoversound:FlxSound;
+	var background:FlxSprite; // this is the background sprite
+	var playerSprite:CombatPlayer; // this is a sprite of the playerSprite
 
 	/**
 	 * Called from PlayState, this will set our win and score variables
@@ -39,6 +41,13 @@ class GameOverState extends FlxState
 		titleText.alignment = CENTER;
 		titleText.screenCenter(FlxAxes.X);
 		add(titleText);
+
+
+		playerSprite = new CombatPlayer(titleText.y + 130, titleText.x + 55);
+		playerSprite.active = false;
+		if (win) playerSprite.animation.frameIndex = 3; else playerSprite.animation.frameIndex = 5;
+		add(playerSprite);
+
 
 		/*gameoversound =  FlxG.sound.load(AssetPaths.gameoversound__mp3);
 		gameoversound.playMusic();

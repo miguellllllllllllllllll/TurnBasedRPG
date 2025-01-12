@@ -74,9 +74,11 @@ class HXCPP_CLASS_ATTRIBUTES AssetPaths_obj : public ::hx::Object
 		static ::String pointer__png;
 		static ::String tiles__png;
 		static ::String bardockthegoat__mp3;
+		static ::String battlemusic__wav;
 		static ::String coin__wav;
 		static ::String combat__wav;
 		static ::String fled__wav;
+		static ::String gameoversound__mp3;
 		static ::String hurt__wav;
 		static ::String lose__wav;
 		static ::String miss__wav;

@@ -114,9 +114,11 @@ import sys.FileSystem;
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_pointer_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_images_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_bardockthegoat_mp3 extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_battlemusic_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_coin_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_combat_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_fled_wav extends null { }
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_gameoversound_mp3 extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_hurt_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_lose_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_miss_wav extends null { }

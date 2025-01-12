@@ -144,9 +144,6 @@ bool MenuState_obj::_hx_isInstanceOf(int inClassId) {
 
 void MenuState_obj::create(){
             	HX_GC_STACKFRAME(&_hx_pos_1f119275e66a7b90_17_create)
-HXLINE(  22)		if (::hx::IsNull( ::flixel::FlxG_obj::sound->music )) {
-HXLINE(  24)			::flixel::FlxG_obj::sound->playMusic(HX_("assets/music/bardockthegoat.mp3",3e,40,cd,2f),1,true,null());
-            		}
 HXLINE(  26)		 ::flixel::ui::FlxButton playButton =  ::flixel::ui::FlxButton_obj::__alloc( HX_CTX ,0,0,HX_("Play",14,5a,33,35),this->clickPlay_dyn());
 HXLINE(  27)		this->add(playButton);
 HXLINE(  30)		this->titleText =  ::flixel::text::FlxText_obj::__alloc( HX_CTX ,20,0,0,HX_("RPG\nGOKU\nGame",c9,9c,f1,67),22,null());
