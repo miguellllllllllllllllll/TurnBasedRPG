@@ -12,9 +12,5 @@
 
 Hello!, this is a haxe game.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
 Haxeflixel and Ogmo editor 3
